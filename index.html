@@ -1,142 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Cmiw Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jual laptop berkualitas dengan spesifikasi tinggi dan garansi resmi.">
+  <meta name="keywords" content="laptop berkualitas, laptop murah, laptop terbaik, laptop garansi resmi">
+  <title>Toko Laptop Premium | Harga Terbaik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- nav start -->
-    <header class="border-b border-gray-200">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl uppercase">cmiwstore</h1>
-      
-              <p class="mt-1.5 text-sm text-gray-500">
-                Menjual laptop dengan banyak brand berbeda, <span class="font-bold text-lg capitalize">harga lebay spek aduhay</span>
-              </p>
-            </div>
-      
-            <div class="flex items-center gap-4">
-              <button
-                class="inline-flex items-center justify-center gap-1.5 rounded border border-gray-200 bg-white px-5 py-3 text-gray-900 transition hover:text-gray-700 focus:outline-none focus:ring"
-                type="button"
-              >
-                <span class="text-sm font-medium"> Cara Belanja </span>
-      
-              </button>
-      
-              <button
-                class="inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
-                type="button"
-              >
-                Chat Admin
-              </button>
-            </div>
-          </div>
-        </div>
-    </header>
-    <!-- nav end -->
+<body class="bg-gray-100 text-gray-900">
 
-    <!-- call to action start -->
-    <section class="bg-gray-50">
-        <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-        <div class="mx-auto max-w-lg text-center">
-            <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-900 sticky top-0 z-50">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="md:flex md:items-center md:gap-12">
+          <a class="block text-teal-600 dark:text-teal-600" href="#">
+            <span class="sr-only">Home</span>
+            <h2 class="font-bold text-2xl text-white">
+              <span class="text-sky-600">Cmiw</span>Store
             </h2>
-    
-            <p class="hidden text-gray-500 sm:mt-4 sm:block">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor officia blanditiis
-            repellat in, vero, aperiam porro ipsum laboriosam consequuntur exercitationem incidunt
-            tempora nisi?
-            </p>
+          </a>
         </div>
-    
-        <div class="mx-auto mt-8 max-w-xl">
-            <form action="#" class="sm:flex sm:gap-4">
-            <div class="sm:flex-1">
-                <label for="search" class="sr-only">search</label>
-    
-                <input
-                type="text"
-                placeholder="Lenovo Thinkpad T4090"
-                class="w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-indigo-400"
-                />
-            </div>
-    
-            <button
-                type="submit"
-                class="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-indigo-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-indigo-400 sm:mt-0 sm:w-auto"
-            >
-                <span class="text-sm font-medium"> Cari Laptop </span>
-    
-                <svg
-                class="size-5 rtl:rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-                </svg>
-            </button>
-            </form>
+  
+        <!-- Menu untuk Desktop -->
+        <div class="hidden md:block">
+          <nav aria-label="Global">
+            <ul class="flex items-center gap-6 text-sm">
+              <li>
+                <a class="text-gray-500 transition hover:text-sky-500/75 dark:text-white dark:hover:text-sky/75 font-semibold md:text-lg" href="#produk">
+                  Produk
+                </a>
+              </li>
+              <li>
+                <a class="text-gray-500 transition hover:text-sky-500/75 dark:text-white dark:hover:text-sky/75 font-semibold md:text-lg" href="#testimoni">
+                  Testimoni
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        </div>
-    </section>
-    <!-- call to action end -->
-
-    <!-- product list start -->
-     <div class="container grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto py-4">
-        <!-- produk 1 -->
-        <a href="https://wa.me/62895325199505?text=Cmiw store saya mau beli laptop AXIOO HYPE 5 X3" class="group block">
-            <img
-              src="https://cms.pasundanekspres.id/storage/uploads/conten/W1PsSHhmqeEnMGGn.webp"
-              alt=""
-              class="aspect-square w-full rounded object-cover"
-            />
-          
-            <div class="mt-3 flex justify-between text-sm">
-                <div>
-                  <h3 class="text-gray-900 group-hover:underline group-hover:underline-offset-4">
-                    AXIOO HYPE 5 AMD JKT48 X3
-                  </h3>
-            
-                  <p class="mt-1.5 text-pretty text-xs text-gray-500">
-                    
-                  </p>
-                </div>
-            
-                <p class="text-gray-900">$299</p>
-              </div>
-        </a>
-
-     </div>
-    <!-- product list end -->
-
-    <!-- footer start -->
-    <footer class="bg-gray-50">
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-          <div class="flex justify-center text-indigo-600 sm:justify-start font-bold">
-            CMIWSTORE
+  
+        <!-- Tombol Kontak -->
+        <div class="flex items-center gap-4">
+          <div class="sm:flex sm:gap-4">
+            <a class="rounded-md bg-sky-600 px-5 py-2.5 text-md font-semibold text-white shadow hover:bg-sky-500 dark:hover:bg-sky-500 transition ease-in-out duration-300" href="https://wa.me/62895325199505?text=Hello Min, Saya pelanggan dari Cmiw Store." target="_blank">
+              Kontak
+            </a>
           </div>
-    
-          <p class="mt-4 text-center text-sm text-indigo-500 lg:mt-0 lg:text-right">
-            Copyright &copy; 2024. All rights reserved.
-          </p>
+  
+          <!-- Hamburger Menu Button for Mobile -->
+          <div class="block md:hidden">
+            <button id="menu-button" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
+  
+    <!-- Mobile Menu (Initially Hidden) -->
+    <nav id="mobile-menu" class="hidden md:hidden transition-all duration-300 ease-in-out">
+      <div class="bg-white dark:bg-gray-900 px-4 py-4">
+        <ul class="space-y-2 text-center">
+          <li>
+            <a class="block text-gray-500 transition hover:text-sky-500/75 dark:text-white dark:hover:text-sky/75 font-semibold" href="#produk">
+              Produk
+            </a>
+          </li>
+          <li>
+            <a class="block text-gray-500 transition hover:text-sky-500/75 dark:text-white dark:hover:text-sky/75 font-semibold" href="#testimoni">
+              Testimoni
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="bg-gray-50">
+    <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+      <div class="mx-auto max-w-lg text-center">
+        <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
+          Garansi 2 Bulan + Bonus Mouse & Mousepad GRATIS!
+        </h2>
+
+        <p class="hidden text-gray-500 sm:mt-4 sm:block">
+          Setiap pembelian laptop dilengkapi dengan garansi selama 2 bulan, jadi Anda tidak perlu khawatir soal keamanan produk. Selain itu, dapatkan mouse dan mousepad gratis sebagai pelengkap produktivitas Anda!
+        </p>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-xl">
+        <form action="#" class="sm:flex sm:gap-4">
+          <div class="sm:flex-1">
+            <label for="email" class="sr-only">Email</label>
+
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Cari laptop...."
+              class="w-full rounded-md border-sky-300 border-2 bg-white p-3 text-gray-700 shadow-md transition focus:border-white focus:outline-none focus:ring focus:ring-sky-400 sm:max-w-sm"
+            />
+          </div>
+
+            <!-- Tombol dropdown -->
+            <select
+              class="group text-center flex w-full items-center justify-center rounded-md bg-sky-600 px-5 py-2 text-white transition focus:outline-none focus:ring focus:ring-sky-400 sm:mt-0 sm:w-auto"
+            >
+              <option selected disabled>Harga</option>
+              <option value="2000000-4000000">Rp 2.000.000 - Rp 4.000.000</option>
+              <option value="4000000-6000000">Rp 4.000.000 - Rp 6.000.000</option>
+              <option value="6000000-8000000">Rp 6.000.000 - Rp 8.000.000</option>
+              <option value="8000000-16000000">Rp 8.000.000 - Rp 16.000.000</option>
+              <option value="16000000-32000000">Rp 16.000.000 - Rp 32.000.000</option>
+              <option value="32000000+">Rp 32.000.000+</option>
+            </select>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- produk -->
+  <div id="produk">
+      <!-- Laptop unggulan Section -->
+    <div id="featuredProducts" class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Produk Unggulan Kami</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Produk 1 -->
+          <a target="_blank" href="https://wa.me/62895325199505?text=Saya ingin membeli laptop ACER PREDATOR HELIOS 16">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <img src="https://s3.ap-southeast-1.amazonaws.com/stream.orbit.co.id/content/uploads/2023/06/29101650/ACER-Predator-Helios-16-PH16-71-99ZW-Core-i9-13900HX-16GB-1TB-4070-W11-6.jpg" alt="Laptop 1" class="w-full mb-4 rounded-md">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Laptop High Performance</h3>
+              <p class="text-md font-bold mb-2 text-gray-500 dark:text-gray-400 underline">ACER PREDATOR HELIOS 16</p>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">Prosesor terbaru, RAM besar, dan SSD untuk kinerja terbaik.</p>
+              <span class="text-blue-500 dark:text-blue-400 font-bold text-lg">Rp 49.499.000</span>
+            </div>
+          </a>
     
-    <!-- footer end -->
+          <!-- Produk 2 -->
+          <a target="_blank" href="https://wa.me/62895325199505?text=Saya ingin membeli laptop HP PAVILION 16 TOUCH ULTRA 5 125U">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/110/MTA-161388938/hewlett_packard_hp_pavilion_16-af0777tu_intel_ultra_5_125u_1tb_ssd_16gb_ips_touch_win11-ohs_full06_fr105jvj.jpg" alt="Laptop 2" class="w-full mb-4 rounded-md">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Laptop Desain Grafis</h3>
+              <p class="text-md font-bold mb-2 text-gray-500 dark:text-gray-400 underline">HP PAVILION 16 TOUCH ULTRA 5 125U</p>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">Layar tajam, kartu grafis kuat, cocok untuk editing dan desain grafis.</p>
+              <span class="text-blue-500 dark:text-blue-400 font-bold text-lg">Rp 15.000.000</span>
+            </div>
+          </a>
+    
+          <!-- Produk 3 -->
+          <a target="_blank" href="https://wa.me/62895325199505?text=Saya ingin membeli laptop MSI PRESTIGE 14 AI EVO ULTRA 5 125H">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <img src="https://www.clove.co.uk/cdn/shop/products/f33621a670eca651f6302975e91c05b8_1200x.jpg?v=1709897412" alt="Laptop 3" class="w-full mb-4 rounded-md">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Laptop Bisnis</h3>
+              <p class="text-md font-bold mb-2 text-gray-500 dark:text-gray-400 underline">MSI PRESTIGE 14 AI EVO ULTRA 5 125H</p>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">Ringan, baterai tahan lama, cocok untuk profesional bisnis.</p>
+              <span class="text-blue-500 dark:text-blue-400 font-bold text-lg">Rp 20.000.000</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- laptop Lainnya -->
+    <div id="productListed" class="py-16 bg-gray-50 border-t border-gray-400">
+      <div class="container mx-auto text-center">
+        <h2 id="darkH2" class="text-3xl font-bold mb-8 text-gray-900">Laptop Premium Lainnya</h2>
+        <div id="laptopList" class="grid grid-cols-1 md:grid-cols-3 gap-1">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <!-- Testimoni Section -->
+  <section id="testimoni" class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Apa Kata Pelanggan Kami</h2>
+      <div class="flex justify-center space-x-8">
+        <!-- Testimoni 1 -->
+        <div class="w-1/3 bg-gray-100 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-700 italic">"Laptopnya sangat berkualitas, pelayanan juga memuaskan. Terima kasih!"</p>
+          <span class="text-blue-500 font-bold mt-4 block">- Budi, Jakarta</span>
+        </div>
+
+        <!-- Testimoni 2 -->
+        <div class="w-1/3 bg-gray-100 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-700 italic">"Sangat membantu dalam pekerjaan sehari-hari, sangat rekomendasi!"</p>
+          <span class="text-blue-500 font-bold mt-4 block">- Sinta, Surabaya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p class="text-sm">&copy; 2024 CmiwStore. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="dist/app.js"></script>
 </body>
 </html>
