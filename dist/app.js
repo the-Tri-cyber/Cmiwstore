@@ -1,5136 +1,3862 @@
-// function hamburger
-document.getElementById("menu-button").addEventListener("click", function() {
-  const mobileMenu = document.getElementById("mobile-menu");
 
-  if (mobileMenu.classList.contains("hidden")) {
-    mobileMenu.classList.remove("hidden");
-  } else {
-    mobileMenu.classList.add("hidden");
-  }
-});
+    // Fungsi hamburger menu
+    document.getElementById("menu-button").addEventListener("click", function() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.classList.toggle("hidden");
+    });
 
-//   laptop list
+
+    // Data laptop
 const laptops = [
-  {
-    gambar: "url_gambar_axioo_hype5_amd_jkt48_x3_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD JKT48 X3",
-    processor: "RYZEN 5 3500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT BLU",
-    harga: 6099000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_jkt48_x3_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD JKT48 X3",
-    processor: "RYZEN 5 3500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT GRY",
-    harga: 6099000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_jkt48_x3_blu_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD JKT48 X3",
-    processor: "RYZEN 5 3500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT BLU",
-    harga: 6399000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_jkt48_x3_gry_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD JKT48 X3",
-    processor: "RYZEN 5 3500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT GRY",
-    harga: 6399000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_x5_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD X5",
-    processor: "RYZEN 5 5500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT BLU",
-    harga: 6799000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_x5_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD X5",
-    processor: "RYZEN 5 5500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT GRY",
-    harga: 6799000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_x5_blu_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD X5",
-    processor: "RYZEN 5 5500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT BLU",
-    harga: 7049000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_amd_x5_gry_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5 AMD X5",
-    processor: "RYZEN 5 5500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT GRY",
-    harga: 7049000
-  },
-  {
-    gambar: "url_gambar_axioo_hype7_amd_x7_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 7 AMD X7",
-    processor: "RYZEN 7 5700",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT GRY",
-    harga: 7799000
-  },
-  {
-    gambar: "url_gambar_axioo_hype7_amd_x7_gry_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 7 AMD X7",
-    processor: "RYZEN 7 5700",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT GRY",
-    harga: 8049000
-  },
-  {
-    gambar: "url_gambar_axioo_hype7_amd_x7_16gb_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 7 AMD X7",
-    processor: "RYZEN 7 5700",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLIT GRY",
-    harga: 8099000
-  },
-  {
-    gambar: "url_gambar_axioo_hype7_amd_x7_16gb_gry_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 7 AMD X7",
-    processor: "RYZEN 7 5700",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLIT GRY",
-    harga: 8349000
-  },
-  {
-    gambar: "url_gambar_axioo_hype1_n4020_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE 1",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 11",
-    warna: "BLU",
-    harga: 3899000
-  },
-  {
-    gambar: "url_gambar_axioo_hype1_n4020_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 1",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 11",
-    warna: "GRY",
-    harga: 3899000
-  },
-  {
-    gambar: "url_gambar_axioo_hype1_n4020_8gb_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE 1",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 11",
-    warna: "BLU",
-    harga: 4099000
-  },
-  {
-    gambar: "url_gambar_axioo_hype1_n4020_8gb_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 1",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 11",
-    warna: "GRY",
-    harga: 4099000
-  },
-  {
-    gambar: "url_gambar_axioo_mybook14f_celeron_blu.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK 14F",
-    processor: "Intel Celeron",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "13.3WQXGA IPS 2.5K",
-    sistem_operasi: "Windows 10",
-    warna: "BLU",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_mybook14f_celeron_red.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK 14F",
-    processor: "Intel Celeron",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "13.3WQXGA IPS 2.5K",
-    sistem_operasi: "Windows 10",
-    warna: "RED",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_mybook14f_celeron_brw.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK 14F",
-    processor: "Intel Celeron",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "13.3WQXGA IPS 2.5K",
-    sistem_operasi: "Windows 10",
-    warna: "BRW",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_mybook14f_celeron_gry.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK 14F",
-    processor: "Intel Celeron",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "13.3WQXGA IPS 2.5K",
-    sistem_operasi: "Windows 10",
-    warna: "GRY",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_hypex_n4020_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE X",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "DOS",
-    warna: "BLU",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_hypex_n4020_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE X",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "DOS",
-    warna: "GRY",
-    harga: 4149000
-  },
-  {
-    gambar: "url_gambar_axioo_hype10_n4020_midnight_blk.jpg",
-    brand: "AXIOO",
-    type: "HYPE 10",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "DOS",
-    warna: "MIDNIGHT BLK",
-    harga: 4179000
-  },
-  {
-    gambar: "url_gambar_axioo_hype10_n4020_titanium_brw.jpg",
-    brand: "AXIOO",
-    type: "HYPE 10",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "DOS",
-    warna: "TITANUM BRW",
-    harga: 4179000
-  },
-  {
-    gambar: "url_gambar_axioo_hype3_i3_1005g1_blu.jpg",
-    brand: "AXIOO",
-    type: "HYPE 3",
-    processor: "Intel Core i3 1005G1",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS HDMI",
-    sistem_operasi: "DOS",
-    warna: "BLU",
-    harga: 5649000
-  },
-  {
-    gambar: "url_gambar_axioo_hype3_i3_1005g1_blu_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 3",
-    processor: "Intel Core i3 1005G1",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS HDMI",
-    sistem_operasi: "Windows 11",
-    warna: "BLU",
-    harga: 6049000
-  },
-  {
-    gambar: "url_gambar_axioo_hype3_i3_1005g1_gry_w11.jpg",
-    brand: "AXIOO",
-    type: "HYPE 3",
-    processor: "Intel Core i3 1005G1",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS HDMI",
-    sistem_operasi: "Windows 11",
-    warna: "GRY",
-    harga: 6049000
-  },
-  {
-    gambar: "url_gambar_axioo_hype5_i5_1035g4_gry.jpg",
-    brand: "AXIOO",
-    type: "HYPE 5",
-    processor: "Intel Core i5 1035G4",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0FHD IPS HDMI",
-    sistem_operasi: "Windows 11",
-    warna: "GRY",
-    harga: 7849000
-  },
-  {
-    gambar: "url_gambar_axioo_mybookpro_c2_8s2.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK PRO C2",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 10 Pro",
-    warna: "TKDN",
-    harga: 8059000
-  },
-  {
-    gambar: "url_gambar_axioo_mybookpro_c1_6s2.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK PRO C1",
-    processor: "Intel N4020",
-    ram: "6GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 10 Pro",
-    warna: "GRY TKDN",
-    harga: 8099000
-  },
-  {
-    gambar: "url_gambar_axioo_mybookpro_c2_8s5.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK PRO C2",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "Windows 10 Pro",
-    warna: "TKDN",
-    harga: 8359000
-  },
-  {
-    gambar: "url_gambar_axioo_mybookpro_103.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK PRO 103",
-    processor: "Intel Core i3 1005G1",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0FHD",
-    sistem_operasi: "Windows 10 Pro",
-    warna: "TKDN",
-    harga: 11629000
-  },
-  {
-    gambar: "url_gambar_axioo_mybook_z6_i3_1215.jpg",
-    brand: "AXIOO",
-    type: "MYBOOK Z6",
-    processor: "Intel Core i3 1215",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "14.0FHD IPS",
-    sistem_operasi: "DOS",
-    warna: "BLK",
-    harga: 6099000
-  },
-  {
-    gambar: "url_gambar_axioo_pongo_725_i7_12650h.jpg",
-    brand: "AXIOO",
-    type: "PONGO 725",
-    processor: "Intel Core i7 12650H",
-    gpu: "RTX2050",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6FHD 144HZ IPS",
-    sistem_operasi: "DOS",
-    warna: "BLK",
-    harga: 11449000
-  },
-  {
-    gambar: "url_gambar_axioo_pongo_960_i9_13900h.jpg",
-    brand: "AXIOO",
-    type: "PONGO 960",
-    processor: "Intel Core i9 13900H",
-    gpu: "RTX4060",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6FHD 144HZ IPS",
-    sistem_operasi: "Windows 11",
-    warna: "GRY",
-    harga: 20899000
-  },
-  {
-    gambar: "url_gambar_axioo_pongo_monster_i9_14900h.jpg",
-    brand: "AXIOO",
-    type: "PONGO MONSTER",
-    processor: "Intel Core i9 14900H",
-    gpu: "RTX4090",
-    ram: "32GB",
-    rom: "2TB",
-    layar: "16.0QHD+ 240HZ IPS",
-    sistem_operasi: "Windows 11",
-    warna: "BLK",
-    harga: 61399000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m1_mgn63id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 13 M1",
-    processor: "Apple M1 7C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "13.3",
-    sistem_operasi: "OS X",
-    warna: "Space Grey",
-    harga: 12799000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m1_mgn93id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 13 M1",
-    processor: "Apple M1 7C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "13.3",
-    sistem_operasi: "OS X",
-    warna: "Silver",
-    harga: 13099000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m2_mlxw3id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 13 M2",
-    processor: "Apple M2 8C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "13.6",
-    sistem_operasi: "OS X",
-    warna: "Space Grey",
-    harga: 15849000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m2_mly13id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 13 M2",
-    processor: "Apple M2 8C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "13.6",
-    sistem_operasi: "OS X",
-    warna: "Starlight Gold",
-    harga: 15849000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m3_mrxn3id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 13 M3",
-    processor: "Apple M3 8C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "13.0",
-    sistem_operasi: "OS X",
-    warna: "Space Grey",
-    harga: 18499000
-  },
-  {
-    gambar: "url_gambar_macbook_air_m3_mryp3id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK AIR 15 M3",
-    processor: "Apple M3 10C GPU",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "15.0",
-    sistem_operasi: "OS X",
-    warna: "Silver",
-    harga: 22899000
-  },
-  {
-    gambar: "url_gambar_macbook_pro_m3_mtl73id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK PRO 14 M3",
-    processor: "Apple M3 10C GPU",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "OS X",
-    warna: "Space Grey",
-    harga: 27399000
-  },
-  {
-    gambar: "url_gambar_macbook_pro_m3_max_muw63id.jpg",
-    brand: "APPLE",
-    type: "MACBOOK PRO 16 M3 MAX",
-    processor: "Apple M3 Max 40C GPU",
-    ram: "48GB",
-    rom: "1TB",
-    layar: "16.0",
-    sistem_operasi: "OS X",
-    warna: "Space Black",
-    harga: 65699000
-  },
-  {
-    gambar: "url_gambar_zyrex_bunaken.jpg",
-    brand: "ZYREX",
-    type: "BUNAKEN N4020",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "256GB+64GB",
-    layar: "14.0",
-    sistem_operasi: "W10",
-    warna: "Gray",
-    harga: 3979000
-  },
-  {
-    gambar: "url_gambar_razer_blade_18_blk.jpg",
-    brand: "RAZER",
-    type: "BLADE 18 I9 13950HX RTX4090",
-    processor: "Intel i9 13950HX",
-    ram: "16GB",
-    rom: "2TB",
-    layar: "18.0",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 50499000
-  },
-  {
-    gambar: "url_gambar_razer_blade_18_mercury.jpg",
-    brand: "RAZER",
-    type: "BLADE 18 I9 13950HX RTX4090",
-    processor: "Intel i9 13950HX",
-    ram: "16GB",
-    rom: "2TB",
-    layar: "18.0",
-    sistem_operasi: "W11",
-    warna: "Mercury",
-    harga: 50499000
-  },
-  {
-    gambar: "url_gambar_advan_soulmate_gry.jpg",
-    brand: "ADVAN",
-    type: "SOULMATE N4020",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 3749000
-  },
-  {
-    gambar: "url_gambar_advan_soulmate_blk.jpg",
-    brand: "ADVAN",
-    type: "SOULMATE N4020",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 3749000
-  },
-  {
-    gambar: "url_gambar_advan_soulmate_blu.jpg",
-    brand: "ADVAN",
-    type: "SOULMATE N4020",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "128GB",
-    layar: "14.0",
-    sistem_operasi: "W11",
-    warna: "Blue",
-    harga: 3749000
-  },
-  {
-    gambar: "url_gambar_msi_commercial.jpg",
-    brand: "MSI",
-    type: "COMMERCIAL 14 I5 13420H",
-    processor: "Intel i5 13420H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11PRO",
-    warna: "Gray",
-    harga: 13499000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_ryzen5.jpg",
-    brand: "MSI",
-    type: "MODERN 14 RYZEN 5 7530",
-    processor: "AMD Ryzen 5 7530",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 9199000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_ryzen5_16gb.jpg",
-    brand: "MSI",
-    type: "MODERN 14 RYZEN 5 7530",
-    processor: "AMD Ryzen 5 7530",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 9799000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_ryzen7.jpg",
-    brand: "MSI",
-    type: "MODERN 14 RYZEN 7 7730",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 11049000
-  },
-  // MSI Modern 14 I3 1215 8GB 256GB
-  {
-    gambar: "url_gambar_msi_modern_14_i3_256gb_blk.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7229000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i3_256gb_slv.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7229000
-  },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD JKT48 X3",
+      processor: "RYZEN 5 3500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6099000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD JKT48 X3",
+      processor: "RYZEN 5 3500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6099000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD JKT48 X3",
+      processor: "RYZEN 5 3500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6399000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD JKT48 X3",
+      processor: "RYZEN 5 3500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6399000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD X5",
+      processor: "RYZEN 5 5500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6799000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD X5",
+      processor: "RYZEN 5 5500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6799000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD X5",
+      processor: "RYZEN 5 5500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 7049000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5 AMD X5",
+      processor: "RYZEN 5 5500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 7049000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 7 AMD X7",
+      processor: "RYZEN 7 5700",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: 7799000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 7 AMD X7",
+      processor: "RYZEN 7 5700",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: 8049000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 7 AMD X7",
+      processor: "RYZEN 7 5700",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: 8099000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 7 AMD X7",
+      processor: "RYZEN 7 5700",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: 8349000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 1",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 3899000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 1",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 3899000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 1",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 4099000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 1",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 4099000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK 14F",
+      processor: "Intel Celeron",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "13.3WQXGA IPS 2.5K",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK 14F",
+      processor: "Intel Celeron",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "13.3WQXGA IPS 2.5K",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK 14F",
+      processor: "Intel Celeron",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "13.3WQXGA IPS 2.5K",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK 14F",
+      processor: "Intel Celeron",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "13.3WQXGA IPS 2.5K",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE X",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE X",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 4149000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 10",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 4179000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 10",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 4179000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 3",
+      processor: "Intel Core i3 1005G1",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS HDMI",
+      harga: 5649000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 3",
+      processor: "Intel Core i3 1005G1",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS HDMI",
+      harga: 6049000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 3",
+      processor: "Intel Core i3 1005G1",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS HDMI",
+      harga: 6049000
+    },
+    {
+      brand: "AXIOO",
+      type: "HYPE 5",
+      processor: "Intel Core i5 1035G4",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS HDMI",
+      harga: 7849000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK PRO C2",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 8059000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK PRO C1",
+      processor: "Intel N4020",
+      ram: "6GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 8099000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK PRO C2",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 8359000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK PRO 103",
+      processor: "Intel Core i3 1005G1",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD",
+      harga: 11629000
+    },
+    {
+      brand: "AXIOO",
+      type: "MYBOOK Z6",
+      processor: "Intel Core i3 1215",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "14.0FHD IPS",
+      harga: 6099000
+    },
+    {
+      brand: "AXIOO",
+      type: "PONGO 725",
+      processor: "Intel Core i7 12650H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6FHD 144HZ IPS",
+      harga: 11449000
+    },
+    {
+      brand: "AXIOO",
+      type: "PONGO 960",
+      processor: "Intel Core i9 13900H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6FHD 144HZ IPS",
+      harga: 20899000
+    },
+    {
+      brand: "AXIOO",
+      type: "PONGO MONSTER",
+      processor: "Intel Core i9 14900H",
+      ram: "32GB",
+      rom: "2TB",
+      layar: "16.0QHD+ 240HZ IPS",
+      harga: 61399000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 13 M1",
+      processor: "Apple M1 7C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "13.3",
+      harga: 12799000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 13 M1",
+      processor: "Apple M1 7C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "13.3",
+      harga: 13099000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 13 M2",
+      processor: "Apple M2 8C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "13.6",
+      harga: 15849000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 13 M2",
+      processor: "Apple M2 8C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "13.6",
+      harga: 15849000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 13 M3",
+      processor: "Apple M3 8C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "13.0",
+      harga: 18499000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK AIR 15 M3",
+      processor: "Apple M3 10C GPU",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "15.0",
+      harga: 22899000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK PRO 14 M3",
+      processor: "Apple M3 10C GPU",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 27399000
+    },
+    {
+      brand: "APPLE",
+      type: "MACBOOK PRO 16 M3 MAX",
+      processor: "Apple M3 Max 40C GPU",
+      ram: "48GB",
+      rom: "1TB",
+      layar: "16.0",
+      harga: 65699000
+    },
+    {
+      brand: "ZYREX",
+      type: "BUNAKEN N4020",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "256GB+64GB",
+      layar: "14.0",
+      harga: 3979000
+    },
+    {
+      brand: "RAZER",
+      type: "BLADE 18 I9 13950HX RTX4090",
+      processor: "Intel i9 13950HX",
+      ram: "16GB",
+      rom: "2TB",
+      layar: "18.0",
+      harga: 50499000
+    },
+    {
+      brand: "RAZER",
+      type: "BLADE 18 I9 13950HX RTX4090",
+      processor: "Intel i9 13950HX",
+      ram: "16GB",
+      rom: "2TB",
+      layar: "18.0",
+      harga: 50499000
+    },
+    {
+      brand: "ADVAN",
+      type: "SOULMATE N4020",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 3749000
+    },
+    {
+      brand: "ADVAN",
+      type: "SOULMATE N4020",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 3749000
+    },
+    {
+      brand: "ADVAN",
+      type: "SOULMATE N4020",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "128GB",
+      layar: "14.0",
+      harga: 3749000
+    },
+    {
+      brand: "MSI",
+      type: "COMMERCIAL 14 I5 13420H",
+      processor: "Intel i5 13420H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 13499000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 RYZEN 5 7530",
+      processor: "AMD Ryzen 5 7530",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9199000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 RYZEN 5 7530",
+      processor: "AMD Ryzen 5 7530",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9799000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 RYZEN 7 7730",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 11049000
+    },
+    // MSI Modern 14 I3 1215 8GB 256GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 7229000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0",
+      harga: 7229000
+    },
+    
+    // MSI Modern 14 I3 1215 8GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 7739000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 7739000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 7739000
+    },
+    
+    // MSI Modern 14 I5 1235 8GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9299000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9299000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9299000
+    },
+    
+    // MSI Modern 14 I5 1235 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9799000
+    },
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 9799000
+    },
+    
+    // MSI Modern 14 I5 1335 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I5 1335",
+      processor: "Intel i5 1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 10799000
+    },
+    
+    // MSI Modern 14H I5 13420H 8GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14H I5 13420H",
+      processor: "Intel i5 13420H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 10899000
+    },
+    
+    // MSI Modern 14 I7 1255 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14 I7 1255",
+      processor: "Intel i7 1255",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 10899000
+    },
+    
+    // MSI Modern 14H I7 13620H 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 14H I7 13620H",
+      processor: "Intel i7 13620H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 12349000
+    },
+    
+    // MSI Modern 15H AI ULTRA 5 125H 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 15H AI ULTRA 5 125H",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6",
+      harga: 13599000
+    },
+    
+    // MSI Modern 15H AI ULTRA 7 155H 16GB 512GB
+    {
+      brand: "MSI",
+      type: "MODERN 15H AI ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6",
+      harga: 15199000
+    },
+    
+    // MSI Prestige 14 AI EVO ULTRA 5 125H RTX3050
+    {
+      brand: "MSI",
+      type: "PRESTIGE 14 AI EVO ULTRA 5 125H",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      kartu_grafis: "RTX3050 6GB",
+      harga: 19499000
+    },
+    
+    // MSI Prestige 13 OLED ULTRA 5 125H
+    {
+      brand: "MSI",
+      type: "PRESTIGE 13 OLED ULTRA 5 125H",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "13.3",
+      harga: 19699000
+    },
+    
+    // MSI Prestige 14 AI ULTRA 7 155H
+    {
+      brand: "MSI",
+      type: "PRESTIGE 14 AI ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0",
+      harga: 20099000
+    },
+    
+    // MSI Prestige 13 AI OLED ULTRA 7 155H
+    {
+      brand: "MSI",
+      type: "PRESTIGE 13 AI OLED ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "13.3",
+      harga: 21449000
+    },
+    
+    // MSI Prestige 14 AI STUDIO OLED ULTRA 7 155H RTX4050
+    {
+      brand: "MSI",
+      type: "PRESTIGE 14 AI STUDIO OLED ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0",
+      kartu_grafis: "RTX4050 6GB",
+      harga: 23499000
+    },
+    
+    // MSI Prestige 16 AI STUDIO ULTRA 7 155H RTX3050
+    {
+      brand: "MSI",
+      type: "PRESTIGE 16 AI STUDIO ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0",
+      kartu_grafis: "RTX3050 6GB",
+      harga: 23699000
+    },
+    
+    // MSI Prestige 16 AI STUDIO ULTRA 7 155H RTX4050
+    {
+      brand: "MSI",
+      type: "PRESTIGE 16 AI STUDIO ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "16.0",
+      kartu_grafis: "RTX4050 6GB",
+      harga: 25299000
+    },
+    
+    // MSI Summit E13 AI TOUCH ULTRA 7 155H
+    {
+      brand: "MSI",
+      type: "SUMMIT E13 AI TOUCH ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "13.3",
+      harga: 25099000
+    },
+    
+    // MSI Summit E16 AI STUDIO TOUCH ULTRA 7 155H RTX4050
+    {
+      brand: "MSI",
+      type: "SUMMIT E16 AI STUDIO TOUCH ULTRA 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0",
+      kartu_grafis: "RTX4050 6GB",
+      harga: 28899000
+    },
+    // MSI Bravo 15
+    {
+      brand: "MSI",
+      type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10899000
+    },
+    {
+      brand: "MSI",
+      type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11449000
+    },
+    {
+      brand: "MSI",
+      type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/32GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 12499000
+    },
+    
+    // MSI Crosshair 16
+    {
+      brand: "MSI",
+      type: "CROSSHAIR 16 MONSTER HUNTER",
+      processor: "Intel i7 14700HX",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ IPS 240Hz",
+      harga: 29899000
+    },
+    
+    // MSI Pulse 16
+    {
+      brand: "MSI",
+      type: "PULSE 16 AI ULTRA 9 185H",
+      processor: "Intel i9 185H",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ 240Hz",
+      harga: 29699000
+    },
+    
+    // MSI Sword 16
+    {
+      brand: "MSI",
+      type: "SWORD 16 HX I7 14700HX",
+      processor: "Intel i7 14700HX",
+      ram: "6GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ 240Hz",
+      harga: 22699000
+    },
+    {
+      brand: "MSI",
+      type: "SWORD 16 HX I7 14650HX",
+      processor: "Intel i7 14650HX",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ 240Hz",
+      harga: 25099000
+    },
+    
+    // MSI Katana A15
+    {
+      brand: "MSI",
+      type: "KATANA A15 AI RYZEN 7 8845HS",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "6GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 17699000
+    },
+    {
+      brand: "MSI",
+      type: "KATANA A15 AI RYZEN 7 8845HS",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "8GB/16GB",
+      rom: "512GB",
+      layar: "15.6 QHD 165Hz",
+      harga: 20399000
+    },
+    
+    // MSI Katana 15
+    {
+      brand: "MSI",
+      type: "KATANA 15 I7 13620H",
+      processor: "Intel i7 13620H",
+      ram: "6GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 18249000
+    },
+    {
+      brand: "MSI",
+      type: "KATANA 17 I7 13620H",
+      processor: "Intel i7 13620H",
+      ram: "6GB/16GB",
+      rom: "1TB",
+      layar: "17.3 FHD 144Hz",
+      harga: 18499000
+    },
+    
+    // MSI Creator Z16HX
+    {
+      brand: "MSI",
+      type: "CREATOR Z16HX STUDIO TOUCH",
+      processor: "Intel i7 13700HX",
+      ram: "8GB/32GB",
+      rom: "2TB",
+      layar: "16.0 QHD+ 165Hz",
+      harga: 38499000
+    },
+    
+    // MSI Thin A15
+    {
+      brand: "MSI",
+      type: "THIN A15 RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11499000
+    },
+    {
+      brand: "MSI",
+      type: "THIN A15 RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12999000
+    },
+    {
+      brand: "MSI",
+      type: "THIN A15 RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "6GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13599000
+    },
+    {
+      brand: "MSI",
+      type: "THIN A15 RYZEN 7 7735HS",
+      processor: "AMD Ryzen 7 7735HS",
+      ram: "8GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 17899000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10849000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10849000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10849000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10849000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 10849000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 11400H",
+      processor: "Intel Core i5 11400H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11249000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 11400H",
+      processor: "Intel Core i5 11400H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11249000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11349000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11349000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 13420H",
+      processor: "Intel Core i5 13420H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11449000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 13420H",
+      processor: "Intel Core i5 13420H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11449000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 11400H",
+      processor: "Intel Core i5 11400H",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11749000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 12049000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12049000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12049000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 13420H",
+      processor: "Intel Core i5 13420H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12249000
+    },
+    {
+      brand: "MSI",
+      type: "THIN GF63 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 12449000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 13420H",
+      processor: "Intel Core i5 13420H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12649000
+    },
+    {
+      brand: "MSI",
+      type: "THIN 15 I5 12450H",
+      processor: "Intel Core i5 12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12649000
+    },
+    {
+      brand: "MSI",
+      type: "RAIDER GE78HX I9 14900HX",
+      processor: "Intel Core i9 14900HX",
+      ram: "12GB/32GB",
+      rom: "2TB",
+      layar: "17.0 QHD+ 240Hz",
+      harga: 53399000
+    },
+    {
+      brand: "MSI",
+      type: "TITAN 18HX 19 I9 14900HX",
+      processor: "Intel Core i9 14900HX",
+      ram: "12GB/64GB",
+      rom: "2TB",
+      layar: "18.0 UHD+ 120Hz",
+      harga: 69499000
+    },
+    {
+      brand: "ACER",
+      type: "CHROMEBOOK 311 C733 N4020",
+      processor: "Intel N4020",
+      ram: "4GB",
+      rom: "32GB",
+      layar: "11.6",
+      harga: 4999000
+    },
+    {
+      brand: "ACER",
+      type: "TRAVELMATE P214 I5 1135G7",
+      processor: "Intel i5-1135G7",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 13399000
+    },
+    {
+      brand: "ACER",
+      type: "TRAVELMATE P40 I7 1165G7",
+      processor: "Intel i7-1165G7",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 11499000
+    },
+    {
+      brand: "ACER",
+      type: "TRAVELMATE P214 I7 1165G7",
+      processor: "Intel i7-1165G7",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 15399000
+    },
+    {
+      brand: "ACER",
+      type: "TRAVELMATE P414 I7 1260P",
+      processor: "Intel i7-1260P",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 22999000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 3 SLIM A314 RYZEN 7 5700",
+      processor: "AMD Ryzen 7 5700",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 IPS",
+      harga: 10199000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 INTEL N100",
+      processor: "Intel N100",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 WUXGA",
+      harga: 6249000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 INTEL N100",
+      processor: "Intel N100",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 6449000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 3 SLIM A314 I3 N305 8CORE",
+      processor: "Intel i3 N305 8CORE",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7199000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 7499000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 3 SLIM A314 I3 N305 8CORE",
+      processor: "Intel i3 N305 8CORE",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7649000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE GO 14 AG14 I3 N305",
+      processor: "Intel i3 N305",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 7799000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 I3 1215",
+      processor: "Intel i3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 7949000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 9799000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE LITE AL14 I5 1235",
+      processor: "Intel i5 1235",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 10159000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 14 CORE 5 120U",
+      processor: "Intel Core 5 120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 11249000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 14 A14 I5 13420H",
+      processor: "Intel i5 13420H",
+      ram: "4GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 11499000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 14 CORE 7 150U",
+      processor: "Intel Core 7 150U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS",
+      harga: 13999000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 5 SLIM A514 I5 1335",
+      processor: "Intel i5 1335",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 10199000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 5 SLIM A514 I7 1355",
+      processor: "Intel i7 1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 13599000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE 5 SLIM A515 I9 13900H",
+      processor: "Intel i9 13900H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD",
+      harga: 13499000
+    },
+    {
+      brand: "ACER",
+      type: "ASPIRE VERO AV16 ULTRA 7",
+      processor: "Intel Ultra 7 155U",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 WUXGA 100% sRGB",
+      harga: 15599000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire 3 Spin A3SP14 TOUCH",
+      processor: "Intel Core i3 N305 8Core",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS 2in1",
+      harga: 9399000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire Spin ASP14 TOUCH",
+      processor: "Intel Core 3 100U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN 2in1",
+      harga: 11599000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire 5 Spin A5SP14 TOUCH",
+      processor: "Intel Core i5 1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA FP PEN 2in1",
+      harga: 12549000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire Spin 14 ASP14 TOUCH",
+      processor: "Intel Core 5 120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN 2in1",
+      harga: 13499000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire 5 Spin A5SP14 TOUCH",
+      processor: "Intel Core i7 1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA FP PEN 2in1",
+      harga: 14599000
+    },
+    {
+      brand: "Acer",
+      type: "Aspire Spin ASP14 TOUCH",
+      processor: "Intel Core 7 150U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN 2in1",
+      harga: 15179000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Edge SFA16 OLED",
+      processor: "AMD Ryzen 5 6600",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "16.0 4K FP",
+      harga: 12599000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go SFG14",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS 100% sRGB",
+      harga: 12399000
+    },
+    {
+      brand: "Acer",
+      type: "Swift 3 OLED SF314",
+      processor: "Intel Core i5 12500H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 90Hz",
+      harga: 12649000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go SFG14 OLED",
+      processor: "Intel Core i5 13500H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 90Hz FP EVO",
+      harga: 13399000
+    },
+    {
+      brand: "Acer",
+      type: "Swift 5 SF514 Aerospace TOUCH",
+      processor: "Intel Core i5 1240P",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 QHD IPS 100% sRGB",
+      harga: 14199000
+    },
+    {
+      brand: "Acer",
+      type: "Swift 14 SF14 TOUCH",
+      processor: "Intel Core i5 13500H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WQXGA 100% sRGB",
+      harga: 17999000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go SFG14 TOUCH",
+      processor: "Intel Core i7 13700H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA FP",
+      harga: 15349000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go SFG14 ULTRA 5",
+      processor: "Intel Core i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 100% sRGB",
+      harga: 13149000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go OLED SFG14 ULTRA 5",
+      processor: "Intel Core i5 125H",
+      ram: "32GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 90Hz",
+      harga: 15449000
+    },
+    {
+      brand: "Acer",
+      type: "Swift X 14 OLED SFX14 ULTRA 7",
+      processor: "Intel Core i7 155H RTX4050",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 2.8K 120Hz",
+      harga: 25899000
+    },
+    {
+      brand: "Acer",
+      type: "Swift X 14 OLED SFX14 ULTRA 7",
+      processor: "Intel Core i7 155H RTX4060",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 2.8K 120Hz",
+      harga: 27999000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go TOUCH SFG14 ULTRA 9",
+      processor: "Intel Core i7 185H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA 100% sRGB",
+      harga: 19049000
+    },
+    {
+      brand: "Acer",
+      type: "Swift Go OLED SFG14 ULTRA 9",
+      processor: "Intel Core i7 185H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 90Hz",
+      harga: 19699000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12299000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 16",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "16.0 WUXGA 165Hz IPS",
+      harga: 18099000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i5 13420H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 12099000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro 5 15 AN515",
+      processor: "Intel Core i5 11400H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13499000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i5 13420H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13999000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro 5 15 AN515",
+      processor: "Intel Core i5 12500H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 14149000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i5 13420H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 15649000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i7 13620H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 15199000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro 5 15 AN515",
+      processor: "Intel Core i7 12650H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 WUXGA 165Hz 100% sRGB",
+      harga: 18699000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i9 13900H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 19799000
+    },
+    {
+      brand: "Acer",
+      type: "Nitro V 15",
+      processor: "Intel Core i9 13900H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 20899000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Triton 16 Ultra 9",
+      processor: "Intel Core i9 185H RTX4060",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA 240Hz 100% DCI-P3",
+      harga: 31299000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i5 14500HX RTX4050",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "16.0 WUXGA 180Hz sRGB100",
+      harga: 19199000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i5 14500HX RTX4060",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "16.0 WQXGA 165Hz sRGB100",
+      harga: 21399000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i7 14700HX RTX4050",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "16.0 WUXGA 165Hz sRGB100",
+      harga: 22599000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i7 13700HX RTX4060",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA 165Hz sRGB100",
+      harga: 23249000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i9 13900HX RTX4060",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA 165Hz sRGB100",
+      harga: 25199000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 16",
+      processor: "Intel Core i9 14900HX RTX4060",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA 165Hz sRGB100",
+      harga: 28349000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios 16",
+      processor: "Intel Core i9 14900HX RTX4080",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA MiniLED 250Hz 100% DCI-P3",
+      harga: 49099000
+    },
+    {
+      brand: "Acer",
+      type: "Predator Helios Neo 14 Ultra 9",
+      processor: "Intel Core i9 185H RTX4060",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 WQXGA 165Hz",
+      harga: 28599000
+    },
+    {
+      brand: "HP",
+      type: "245 G10",
+      processor: "Ryzen 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 Slim Bezel",
+      harga: 6699000
+    },
+    {
+      brand: "HP",
+      type: "245 G8",
+      processor: "Ryzen 5 5500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 Slim Bezel",
+      harga: 7999000
+    },
+    {
+      brand: "HP",
+      type: "245 G9",
+      processor: "Ryzen 5 5625",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 Slim Bezel",
+      harga: 8099000
+    },
+    {
+      brand: "HP",
+      type: "ProBook 440 G10",
+      processor: "Intel Core i7 1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 19999000
+    },
+    {
+      brand: "HP",
+      type: "EliteBook 845 G9",
+      processor: "Ryzen 9 6950HS",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA",
+      harga: 18299000
+    },
+    {
+      brand: "HP",
+      type: "14 Athlon Silver 3050",
+      processor: "Athlon Silver 3050",
+      ram: "4GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 6149000
+    },
+    {
+      brand: "HP",
+      type: "14 Athlon Silver 3050",
+      processor: "Athlon Silver 3050",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0",
+      harga: 6349000
+    },
+    {
+      brand: "HP",
+      type: "14 Athlon 7120",
+      processor: "Athlon 7120",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 6399000
+    },
+    {
+      brand: "HP",
+      type: "14 Ryzen 3 5300",
+      processor: "Ryzen 3 5300",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 7079000
+    },
+    {
+      brand: "HP",
+      type: "14 Ryzen 3 5300",
+      processor: "Ryzen 3 5300",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 7499000
+    },
+    {
+      brand: "HP",
+      type: "14 Ryzen 5 5500",
+      processor: "Ryzen 5 5500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 8138000
+    },
+    {
+      brand: "HP",
+      type: "14 Ryzen 5 5500",
+      processor: "Ryzen 5 5500",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 8599000
+    },
+    {
+      brand: "HP",
+      type: "14 N4500",
+      processor: "Intel Celeron N4500",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "14.0 BLIT",
+      harga: 5679000
+    },
+    {
+      brand: "HP",
+      type: "14 N4500",
+      processor: "Intel Celeron N4500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 BLIT",
+      harga: 5849000
+    },
+    {
+      brand: "HP",
+      type: "14 N4500",
+      processor: "Intel Celeron N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 BLIT",
+      harga: 6149000
+    },
+    {
+      brand: "HP",
+      type: "14 I3 1215",
+      processor: "Intel Core i3-1215",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD BLIT",
+      harga: 7299000
+    },
+    {
+      brand: "HP",
+      type: "14 I3 1215",
+      processor: "Intel Core i3-1215",
+      ram: "4GB",
+      rom: "512GB",
+      layar: "14.0 FHD BLIT",
+      harga: 7399000
+    },
+    {
+      brand: "HP",
+      type: "14 I3 1215",
+      processor: "Intel Core i3-1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD BLIT",
+      harga: 7599000
+    },
+    {
+      brand: "HP",
+      type: "14 I3 1215",
+      processor: "Intel Core i3-1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD BLIT (Box MOU Z3700)",
+      harga: 8499000
+    },
+    {
+      brand: "HP",
+      type: "14 I5 1155G7",
+      processor: "Intel Core i5-1155G7",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 9299000
+    },
+    {
+      brand: "HP",
+      type: "14 I5 1235",
+      processor: "Intel Core i5-1235",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 9649000
+    },
+    {
+      brand: "HP",
+      type: "14 I5 1155G7",
+      processor: "Intel Core i5-1155G7",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 9749000
+    },
+    {
+      brand: "HP",
+      type: "14 I5 1235",
+      processor: "Intel Core i5-1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 10049900
+    },
+    {
+      brand: "HP",
+      type: "14 I5 1335",
+      processor: "Intel Core i5-1335",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 10599000
+    },
+    {
+      brand: "HP",
+      type: "14 I7 1255",
+      processor: "Intel Core i7-1255",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT",
+      harga: 12399000
+    },
+    {
+      brand: "HP",
+      type: "14 I7 1355",
+      processor: "Intel Core i7-1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS BLIT FP",
+      harga: 14099000
+    },
+    {
+      brand: "HP",
+      type: "15 I7 1355 MX570A",
+      processor: "Intel Core i7-1355 MX570A",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS BLIT",
+      harga: 15499000
+    },
+    {
+      brand: "HP",
+      type: "15 ULTRA 5 125H",
+      processor: "Intel Core i5-125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS BLIT",
+      harga: 12199000
+    },
+    {
+      brand: "HP",
+      type: "15 ULTRA 5 125H",
+      processor: "Intel Core i5-125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS BLIT",
+      harga: 12199000
+    },
+    {
+      brand: "HP",
+      type: "15 ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS BLIT",
+      harga: 14399000
+    },
+    {
+      brand: "HP",
+      type: "15 ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS BLIT",
+      harga: 14399000
+    },
+    // HP Pavilion Plus type
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 RYZEN 5 7540",
+      processor: "AMD Ryzen 5 7540",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA BLIT",
+      harga: 12349000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 RYZEN 5 7540",
+      processor: "AMD Ryzen 5 7540",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA BLIT",
+      harga: 12349000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 RYZEN 5 7540",
+      processor: "AMD Ryzen 5 7540",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA BLIT",
+      harga: 12349000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION AERO 13 RYZEN 5 8640",
+      processor: "AMD Ryzen 5 8640",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "13.3 WUXGA IPS",
+      harga: 15099000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION AERO 13 RYZEN 5 8640",
+      processor: "AMD Ryzen 5 8640",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "13.3 WUXGA IPS",
+      harga: 15099000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION AERO 13 RYZEN 7 8840",
+      processor: "AMD Ryzen 7 8840",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "13.3 WUXGA IPS",
+      harga: 16499000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION AERO 13 RYZEN 7 8840",
+      processor: "AMD Ryzen 7 8840",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "13.3 WUXGA IPS",
+      harga: 16499000
+    },
+    // HP Pavilion Plus I5 type
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 I5 1335",
+      processor: "Intel Core i5-1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA IPS BLIT",
+      harga: 12699000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 I5 1335",
+      processor: "Intel Core i5-1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WQXGA VRR 120HZ",
+      harga: 15999000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 I5 1335",
+      processor: "Intel Core i5-1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WQXGA VRR 120HZ",
+      harga: 15999000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED I7 1355",
+      processor: "Intel Core i7-1355",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 17699000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED I7 1355",
+      processor: "Intel Core i7-1355",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 18899000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED I7 1355",
+      processor: "Intel Core i7-1355",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 18899000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED I7 1355",
+      processor: "Intel Core i7-1355",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 18899000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED ULTRA 5 125H",
+      processor: "Intel Core i5-125H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 17199000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED ULTRA 5 125H",
+      processor: "Intel Core i5-125H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 17199000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 21399000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION PLUS 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120HZ",
+      harga: 21399000
+    },
+    // HP Pavilion 16 type
+    {
+      brand: "HP",
+      type: "PAVILION 16 TOUCH ULTRA 5 125U",
+      processor: "Intel Core i5-125U",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 WUXGA BLIT",
+      harga: 14849000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION 16 TOUCH ULTRA 7 155U",
+      processor: "Intel Core i7-155U MX570A",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "16.0 WUXGA BLIT",
+      harga: 19299000
+    },
+    // HP Pavilion X360 type
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH I3 1315",
+      processor: "Intel Core i3-1315",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 11399000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 3 100U",
+      processor: "Intel Core i3-100U",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 11599000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 5 120U",
+      processor: "Intel Core i5-120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS FP PEN 720P CAM",
+      harga: 15099000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 5 120U",
+      processor: "Intel Core i5-120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS FP PEN",
+      harga: 15299000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 5 120U",
+      processor: "Intel Core i5-120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS FP PEN",
+      harga: 15299000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 7 150U",
+      processor: "Intel Core i7-150U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS FP PEN 720P CAM",
+      harga: 16499000
+    },
+    {
+      brand: "HP",
+      type: "PAVILION X360 14 TOUCH CORE 7 150U",
+      processor: "Intel Core i7-150U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS FP PEN 720P CAM",
+      harga: 16699000
+    },
+    // HP Envy X360 type
+    {
+      brand: "HP",
+      type: "ENVY X360 14 OLED RYZEN 7 8840HS",
+      processor: "AMD Ryzen 7 8840HS",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 22399000
+    },
+    {
+      brand: "HP",
+      type: "ENVY X360 14 OLED ULTRA 5 125U",
+      processor: "Intel Core i5-125U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 18699000
+    },
+    {
+      brand: "HP",
+      type: "ENVY X360 14 OLED ULTRA 5 125U",
+      processor: "Intel Core i5-125U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 18699000
+    },
+    {
+      brand: "HP",
+      type: "ENVY X360 14 OLED ULTRA 7 155U",
+      processor: "Intel Core i7-155U",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 21299000
+    },
+    {
+      brand: "HP",
+      type: "ENVY X360 14 OLED ULTRA 7 155U",
+      processor: "Intel Core i7-155U",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120HZ",
+      harga: 21299000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 28499000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 28499000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 28499000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "2TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 30499000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 14 OLED ULTRA 7 155H",
+      processor: "Intel Core i7-155H",
+      ram: "32GB",
+      rom: "2TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 30499000
+    },
+    {
+      brand: "HP",
+      type: "SPECTRE X360 17 FOLD TOUCH OLED",
+      processor: "Intel Core i7-1250",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "17.0 2.5K",
+      harga: 42899000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11449000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11449000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 RYZEN 5 8645HS",
+      processor: "AMD Ryzen 5 8645HS",
+      ram: "6GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13499000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 RYZEN 5 8645HS",
+      processor: "AMD Ryzen 5 8645HS",
+      ram: "6GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 15799000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 RYZEN 5 8645HS",
+      processor: "AMD Ryzen 5 8645HS",
+      ram: "8GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 17299000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 RYZEN 5 8645HS",
+      processor: "AMD Ryzen 5 8645HS",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.1 FHD 144Hz",
+      harga: 18099000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 RYZEN 7 8845HS",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.1 FHD 165Hz 100% sRGB",
+      harga: 23599000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 16 RYZEN 7 7745HS",
+      processor: "AMD Ryzen 7 7745HS",
+      ram: "8GB/16GB",
+      rom: "512GB",
+      layar: "16.1 FHD 144Hz",
+      harga: 18899000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 16 RYZEN 7 7745HS",
+      processor: "AMD Ryzen 7 7745HS",
+      ram: "12GB/32GB",
+      rom: "1TB",
+      layar: "16.1 FHD 165Hz 100% sRGB",
+      harga: 28299000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 17 RYZEN 7 7745HS",
+      processor: "AMD Ryzen 7 7745HS",
+      ram: "12GB/32GB",
+      rom: "1TB",
+      layar: "17.3 FHD 144Hz 100% sRGB",
+      harga: 30399000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 17 RYZEN 9 7945HX",
+      processor: "AMD Ryzen 9 7945HX",
+      ram: "16GB/32GB",
+      rom: "1TB",
+      layar: "17.3 FHD 165Hz 100% sRGB",
+      harga: 38899000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 I5 12450H RTX2050",
+      processor: "Intel Core i5-12450H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 11739000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 I5 12450H RTX2050",
+      processor: "Intel Core i5-12450H",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD IPS 144Hz",
+      harga: 12239000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 I5 13420H RTX3050",
+      processor: "Intel Core i5-13420H",
+      ram: "6GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13899000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 15 I5 13500H RTX4050",
+      processor: "Intel Core i5-13500H",
+      ram: "6GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 15699000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 I5 13500HX RTX4050",
+      processor: "Intel Core i5-13500HX",
+      ram: "6GB/16GB",
+      rom: "512GB",
+      layar: "16.1 FHD 144Hz 100% sRGB",
+      harga: 16699000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 I5 14450HX RTX4060",
+      processor: "Intel Core i5-14450HX",
+      ram: "8GB/16GB",
+      rom: "512GB",
+      layar: "16.1 FHD 144Hz 100% sRGB",
+      harga: 20099000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 I7 14650HX RTX4060",
+      processor: "Intel Core i7-14650HX",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.1 FHD 144Hz 100% sRGB",
+      harga: 23499000
+    },
+    {
+      brand: "HP",
+      type: "VICTUS 16 I7 14650HX RTX4070",
+      processor: "Intel Core i7-14650HX",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.1 FHD 165Hz 100% sRGB",
+      harga: 26699000
+    },
+    // HP OMEN
+    {
+      brand: "HP",
+      type: "OMEN 14 OLED ULTRA 7 155H RTX4060",
+      processor: "Intel Core i7-155H",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 31299000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 14 OLED ULTRA 7 155H RTX4060",
+      processor: "Intel Core i7-155H",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 31299000
+    },
+    {
+      brand: "HP",
+      type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4060",
+      processor: "Intel Core i9-185H",
+      ram: "6GB/32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 35499000
+    },
+    {
+      brand: "HP",
+      type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4060",
+      processor: "Intel Core i9-185H",
+      ram: "6GB/32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 35499000
+    },
+    {
+      brand: "HP",
+      type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4070",
+      processor: "Intel Core i9-185H",
+      ram: "8GB/32GB",
+      rom: "2TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 39799000
+    },
+    {
+      brand: "HP",
+      type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4070",
+      processor: "Intel Core i9-185H",
+      ram: "8GB/32GB",
+      rom: "2TB",
+      layar: "14.0 2.8K VRR 120Hz 4ZRGB",
+      harga: 39799000
+    },
+    {
+      brand: "HP",
+      type: "OMEN 16 RYZEN 7 7840HS RTX4070",
+      processor: "AMD Ryzen 7 7840HS",
+      ram: "8GB/32GB",
+      rom: "1TB",
+      layar: "16.1 QHD 240Hz",
+      harga: 26199000
+    },
+    // ASUS
+    {
+      brand: "ASUS",
+      type: "FLIP C214MA CHROMEBOOK 2IN1 TOUCH N4020",
+      processor: "Intel Celeron N4020",
+      ram: "4GB",
+      rom: "32GB",
+      layar: "11.6 HD",
+      harga: 4499000
+    },
+    {
+      brand: "ASUS",
+      type: "EXPERTBOOK B1402CBA I3 1215",
+      processor: "Intel Core i3-1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7799000
+    },
+    {
+      brand: "ASUS",
+      type: "EXPERTBOOK B1402CBA I5 1235",
+      processor: "Intel Core i5-1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 10899000
+    },
+    {
+      brand: "ASUS",
+      type: "EXPERTBOOK B1400CBA I7 1255",
+      processor: "Intel Core i7-1255",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 13099000
+    },
+    {
+      brand: "ASUS",
+      type: "EXPERTBOOK B5 FLIP B5302FEA OLED TOUCH I7 1165G7",
+      processor: "Intel Core i7-1165G7",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "13.3 FHD OLED",
+      harga: 16399000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7249000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7869000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7869000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404FA RYZEN 5 7520",
+      processor: "AMD Ryzen 5 7520",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 8999000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404FA RYZEN 5 7520",
+      processor: "AMD Ryzen 5 7520",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 9919000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 M1405YA RYZEN 5 7430",
+      processor: "AMD Ryzen 5 7430",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 10459000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK S 14 OLED M5406NA RYZEN 5 7535HS",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2K OLED",
+      harga: 14399000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 OLED M1405YA RYZEN 7 7730",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K OLED",
+      harga: 13299000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 OLED M1405YA RYZEN 7 7730",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K OLED",
+      harga: 13299000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 OLED M5406UA RYZEN 7 8845HS",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA OLED",
+      harga: 15969000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E410KA N4500",
+      processor: "Intel N4500",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 6149000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "4GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 6179000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 6329000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 6359000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 6359000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 15 X515EA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "15.6 FHD",
+      harga: 6999000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 15 X515EA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD",
+      harga: 7399000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 15 X515EA N4500",
+      processor: "Intel N4500",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD",
+      harga: 7799000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 15 X515EA N4500",
+      processor: "Intel N4500",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "15.6 FHD",
+      harga: 8499000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6689000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1400KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6689000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E410KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6779000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E410KA N4500",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6779000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404GA I3 N305",
+      processor: "Intel I3 N305",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7499000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404GA I3 N305",
+      processor: "Intel I3 N305",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7499000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK GO 14 E1404GA I3 N305",
+      processor: "Intel I3 N305",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7749000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1404ZA I3 1215",
+      processor: "Intel I3 1215",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD IPS 100% sRGB",
+      harga: 7779000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1404ZA I3 1215",
+      processor: "Intel I3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD VIPS",
+      harga: 8429000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1404VA I5 1335",
+      processor: "Intel I5 1335",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD VIPS",
+      harga: 11259000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 14 A1405VA I7 1355",
+      processor: "Intel I7 1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA VIPS",
+      harga: 14599000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook 14 A1400KA N4500 8GB 512GB",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6689000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook 14 A1400KA N4500 8GB 512GB",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6689000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 14 E410KA N4500 8GB 512GB",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6779000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 14 E410KA N4500 8GB 512GB",
+      processor: "Intel N4500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6779000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 14 E1404GA I3 N305 8GB 256GB",
+      processor: "Intel I3 N305",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7499000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 14 E1404GA I3 N305 8GB 512GB",
+      processor: "Intel I3 N305",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7749000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook 14 A1404ZA I3 1215 8GB 512GB",
+      processor: "Intel I3 1215",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 8429000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook 14 A1404ZA I5 1235 8GB 512GB",
+      processor: "Intel I5 1235",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 10349000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook S 15 OLED S5507QA Snapdragon X Elite X1E",
+      processor: "Snapdragon X Elite X1E",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "15.6 3K 120Hz",
+      harga: 25499000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 15 OLED E1504FA Ryzen 3 7320 8GB 256GB",
+      processor: "Ryzen 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "15.6 FHD",
+      harga: 8399000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook GO 15 OLED E1504FA Ryzen 5 7520 16GB 512GB",
+      processor: "Ryzen 5 7520",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD",
+      harga: 10849000
+    },
+    {
+      brand: "ASUS",
+      type: "VivoBook Pro 15 OLED M6500QC Ryzen 5 5600H RTX3050 4GB/16GB 512GB",
+      processor: "Ryzen 5 5600H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 2.8K 120Hz",
+      harga: 13799000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK 15 OLED K513EA",
+      processor: "Intel Core i7 1165G7",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD OLED 100% DCI-P3",
+      harga: 12399000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK PRO 16 OLED K6602VU",
+      processor: "Intel Core i9 13900H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 3.2K OLED 120Hz",
+      harga: 25199000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK PRO 16X OLED K6604JV",
+      processor: "Intel Core i9 13980HX",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "16.0 3.2K OLED 120Hz",
+      harga: 29299000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK PRO 16X OLED K6604JV",
+      processor: "Intel Core i9 13980HX",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "16.0 3.2K OLED 120Hz",
+      harga: 30729000
+    },
+    {
+      brand: "ASUS",
+      type: "VIVOBOOK PRO 15 OLED N6506MU ULTRA 7",
+      processor: "Intel Core i7 155H",
+      ram: "24GB",
+      rom: "1TB",
+      layar: "15.6 3K OLED 120Hz",
+      harga: 27399000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 UM425UAZ",
+      processor: "AMD Ryzen 5 5500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: 11380000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 OLED UM3406HA",
+      processor: "AMD Ryzen 7 8840HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA OLED",
+      harga: 15999000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 OLED UX3402ZA TOUCH",
+      processor: "Intel Core i5 1240P",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 2.8K OLED 90Hz",
+      harga: 15399000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 OLED UX3405MA ULTRA 5",
+      processor: "Intel Core i5 125H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 3K OLED",
+      harga: 18499000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 OLED UX3405MA ULTRA 7",
+      processor: "Intel Core i7 155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 3K OLED 120Hz",
+      harga: 21499000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK 14 OLED TOUCH UX3405MA ULTRA 7",
+      processor: "Intel Core i7 155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 3K OLED 120Hz",
+      harga: 23799000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK S13 OLED UX5304MA ULTRA 7",
+      processor: "Intel Core i7 155U",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "13.3 3K OLED",
+      harga: 26349000
+    },
+    {
+      brand: "ASUS",
+      type: "ZENBOOK DUO UX8406MA OLED TOUCH ULTRA 7",
+      processor: "Intel Core i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 3K+FHD OLED 120Hz",
+      harga: 34249000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A14 FA401UU",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 QHD 165Hz",
+      harga: 23299000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A15 FA506NF",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 11449000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A15 FA506NC",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz IPS",
+      harga: 12649000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A15 FA507NU",
+      processor: "AMD Ryzen 5 7535HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 16349000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A16 FA617NSR",
+      processor: "AMD Ryzen 7 7435HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "16.0 FHD 165Hz",
+      harga: 18699000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A15 FA507UV",
+      processor: "AMD Ryzen 9 8945H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "15.6 FHD 144Hz",
+      harga: 24499000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF A15 FA507UI",
+      processor: "AMD Ryzen 9 8945H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "15.6 FHD 144Hz",
+      harga: 26599000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF F15 FX506LH",
+      processor: "Intel Core i5 10300H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12099000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF F15 FX507ZC4",
+      processor: "Intel Core i5 12500H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 13749000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF F15 FX507ZC4",
+      processor: "Intel Core i5 12500H",
+      ram: "4GB/16GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 14199000
+    },
+    {
+      brand: "ASUS",
+      type: "TUF F15 FX506HF",
+      processor: "Intel Core i7 11800H",
+      ram: "4GB/8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12099000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG STRIX G16 G614JU",
+      processor: "Intel Core i7 13650HX",
+      ram: "6GB/16GB",
+      rom: "512GB",
+      layar: "16.0 FHD 165Hz",
+      harga: 24249000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G14 GA402NJ",
+      processor: "AMD Ryzen 7 7735HS",
+      ram: "6GB/16GB",
+      rom: "512GB",
+      layar: "14.0 QHD 120Hz",
+      harga: 21999000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG FLOW X13 GV302XU",
+      processor: "AMD Ryzen 9 7940HS",
+      ram: "6GB/16GB",
+      rom: "1TB",
+      layar: "13.4 QHD 165Hz",
+      harga: 29899000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 GU603VV I9 13900H",
+      processor: "Intel Core i9 13900H",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ NEBULA 240Hz",
+      harga: 32399000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MU ULTRA 7 155H",
+      processor: "AMD Ryzen 7 155H",
+      ram: "6GB/16GB",
+      rom: "1TB",
+      layar: "16.0 NEBULA 2.5K 240Hz",
+      harga: 33999000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MI ULTRA 9 185H",
+      processor: "AMD Ryzen 9 185H",
+      ram: "8GB/32GB",
+      rom: "1TB",
+      layar: "16.0 NEBULA 2.5K 240Hz",
+      harga: 44999000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS M16 GU604VI I9 13900H",
+      processor: "Intel Core i9 13900H",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ NEBULA 240Hz",
+      harga: 39499000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS DUO 16 GX650PI RYZEN 9 7945HX",
+      processor: "AMD Ryzen 9 7945HX",
+      ram: "8GB/32GB",
+      rom: "1TB",
+      layar: "16.0 QHD+ NEBULA MINILED 240Hz",
+      harga: 57999000
+    },
+    {
+      brand: "Lenovo",
+      type: "IDEAPAD SLIM 1 14 RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7049000
+    },
+    {
+      brand: "Lenovo",
+      type: "IDEAPAD SLIM 1 14 RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 7440000
+    },
+    {
+      brand: "Lenovo",
+      type: "IDEAPAD SLIM 1 14 N4020",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 5749000
+    },
+    {
+      brand: "Lenovo",
+      type: "IDEAPAD SLIM 1 14 N4020",
+      processor: "Intel N4020",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 6099000
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 GU603VV",
+      processor: "I9 13900H",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0QHD+ NEBULA 240HZ",
+      harga: "32.299"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MU",
+      processor: "ULTRA 7 155H",
+      ram: "6GB",
+      rom: "1TB",
+      layar: "16.0+ NEBULA 2.5K 240HZ",
+      harga: "33.999"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MI",
+      processor: "ULTRA 9 185H",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0 NEBULA 2.5K 240HZ",
+      harga: "44.999"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MV",
+      processor: "ULTRA 9 185H",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0+ NEBULA 2.5K 240HZ",
+      harga: "37.299"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS G16 OLED GU605MV",
+      processor: "ULTRA 9 185H",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0+ NEBULA 2.5K 240HZ",
+      harga: "40.299"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS M16 GU604VI",
+      processor: "I9 13900H",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0 NEBULA QHD+ 240HZ",
+      harga: "39.499"
+    },
+    {
+      brand: "ASUS",
+      type: "ROG ZEPHYRUS DUO 16 GX650PI",
+      processor: "RYZEN 9 7945HX",
+      ram: "8GB",
+      rom: "1TB",
+      layar: "16.0QHD+ NEBULA MINILED 240HZ",
+      harga: "57.999"
+    },
   
-  // MSI Modern 14 I3 1215 8GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14_i3_512gb_blk.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7739000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i3_512gb_slv.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7739000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i3_512gb_beige.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Beige",
-    harga: 7739000
-  },
-  
-  // MSI Modern 14 I5 1235 8GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14_i5_512gb_slv.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 9299000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i5_512gb_blk.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 9299000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i5_512gb_beige.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Beige",
-    harga: 9299000
-  },
-  
-  // MSI Modern 14 I5 1235 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14_i5_16gb_512gb_slv.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 9799000
-  },
-  {
-    gambar: "url_gambar_msi_modern_14_i5_16gb_512gb_blk.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 9799000
-  },
-  
-  // MSI Modern 14 I5 1335 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14_i5_1335.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I5 1335",
-    processor: "Intel i5 1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 10799000
-  },
-  
-  // MSI Modern 14H I5 13420H 8GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14h_i5_13420h.jpg",
-    brand: "MSI",
-    type: "MODERN 14H I5 13420H",
-    processor: "Intel i5 13420H",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 10899000
-  },
-  
-  // MSI Modern 14 I7 1255 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14_i7_1255.jpg",
-    brand: "MSI",
-    type: "MODERN 14 I7 1255",
-    processor: "Intel i7 1255",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 10899000
-  },
-  
-  // MSI Modern 14H I7 13620H 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_14h_i7_13620h.jpg",
-    brand: "MSI",
-    type: "MODERN 14H I7 13620H",
-    processor: "Intel i7 13620H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12349000
-  },
-  
-  // MSI Modern 15H AI ULTRA 5 125H 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_15h_ai_ultra_5_125h.jpg",
-    brand: "MSI",
-    type: "MODERN 15H AI ULTRA 5 125H",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 13599000
-  },
-  
-  // MSI Modern 15H AI ULTRA 7 155H 16GB 512GB
-  {
-    gambar: "url_gambar_msi_modern_15h_ai_ultra_7_155h.jpg",
-    brand: "MSI",
-    type: "MODERN 15H AI ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 15199000
-  },
-  
-  // MSI Prestige 14 AI EVO ULTRA 5 125H RTX3050
-  {
-    gambar: "url_gambar_msi_prestige_14_ai_evo.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 14 AI EVO ULTRA 5 125H",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    kartu_grafis: "RTX3050 6GB",
-    warna: "Gray",
-    harga: 19499000
-  },
-  
-  // MSI Prestige 13 OLED ULTRA 5 125H
-  {
-    gambar: "url_gambar_msi_prestige_13_oled.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 13 OLED ULTRA 5 125H",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "13.3",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 19699000
-  },
-  
-  // MSI Prestige 14 AI ULTRA 7 155H
-  {
-    gambar: "url_gambar_msi_prestige_14_ai_ultra.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 14 AI ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 20099000
-  },
-  
-  // MSI Prestige 13 AI OLED ULTRA 7 155H
-  {
-    gambar: "url_gambar_msi_prestige_13_ai_oled.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 13 AI OLED ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "13.3",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 21449000
-  },
-  
-  // MSI Prestige 14 AI STUDIO OLED ULTRA 7 155H RTX4050
-  {
-    gambar: "url_gambar_msi_prestige_14_ai_studio.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 14 AI STUDIO OLED ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    kartu_grafis: "RTX4050 6GB",
-    warna: "Gray",
-    harga: 23499000
-  },
-  
-  // MSI Prestige 16 AI STUDIO ULTRA 7 155H RTX3050
-  {
-    gambar: "url_gambar_msi_prestige_16_ai_studio_3050.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 16 AI STUDIO ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0",
-    sistem_operasi: "W11+OHS",
-    kartu_grafis: "RTX3050 6GB",
-    warna: "Gray",
-    harga: 23699000
-  },
-  
-  // MSI Prestige 16 AI STUDIO ULTRA 7 155H RTX4050
-  {
-    gambar: "url_gambar_msi_prestige_16_ai_studio_4050.jpg",
-    brand: "MSI",
-    type: "PRESTIGE 16 AI STUDIO ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "16.0",
-    sistem_operasi: "W11+OHS",
-    kartu_grafis: "RTX4050 6GB",
-    warna: "Gray",
-    harga: 25299000
-  },
-  
-  // MSI Summit E13 AI TOUCH ULTRA 7 155H
-  {
-    gambar: "url_gambar_msi_summit_e13_ai_touch.jpg",
-    brand: "MSI",
-    type: "SUMMIT E13 AI TOUCH ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "13.3",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 25099000
-  },
-  
-  // MSI Summit E16 AI STUDIO TOUCH ULTRA 7 155H RTX4050
-  {
-    gambar: "url_gambar_msi_summit_e16_ai_studio.jpg",
-    brand: "MSI",
-    type: "SUMMIT E16 AI STUDIO TOUCH ULTRA 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0",
-    sistem_operasi: "W11+OHS",
-    kartu_grafis: "RTX4050 6GB",
-    warna: "Black",
-    harga: 28899000
-  },
-  // MSI Bravo 15
-  {
-    gambar: "url_gambar_msi_bravo_15_7535hs_4gb_8gb_512gb.jpg",
-    brand: "MSI",
-    type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 10899000
-  },
-  {
-    gambar: "url_gambar_msi_bravo_15_4gb_16gb_512gb.jpg",
-    brand: "MSI",
-    type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 11449000
-  },
-  {
-    gambar: "url_gambar_msi_bravo_15_4gb_32gb_512gb.jpg",
-    brand: "MSI",
-    type: "BRAVO 15 RYZEN 5 7535HS AMD RX6550",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/32GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12499000
-  },
-  
-  // MSI Crosshair 16
-  {
-    gambar: "url_gambar_msi_crosshair_16_i7_14700hx_rtx4060.jpg",
-    brand: "MSI",
-    type: "CROSSHAIR 16 MONSTER HUNTER",
-    processor: "Intel i7 14700HX",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ IPS 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 29899000
-  },
-  
-  // MSI Pulse 16
-  {
-    gambar: "url_gambar_msi_pulse_16_ai_ultra_9_185h_rtx4060.jpg",
-    brand: "MSI",
-    type: "PULSE 16 AI ULTRA 9 185H",
-    processor: "Intel i9 185H",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 29699000
-  },
-  
-  // MSI Sword 16
-  {
-    gambar: "url_gambar_msi_sword_16_hx_i7_14700hx_rtx4050.jpg",
-    brand: "MSI",
-    type: "SWORD 16 HX I7 14700HX",
-    processor: "Intel i7 14700HX",
-    ram: "6GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 22699000
-  },
-  {
-    gambar: "url_gambar_msi_sword_16_hx_i7_14650hx_rtx4060.jpg",
-    brand: "MSI",
-    type: "SWORD 16 HX I7 14650HX",
-    processor: "Intel i7 14650HX",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 25099000
-  },
-  
-  // MSI Katana A15
-  {
-    gambar: "url_gambar_msi_katana_a15_ryzen_7_8845hs_rtx4050.jpg",
-    brand: "MSI",
-    type: "KATANA A15 AI RYZEN 7 8845HS",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "6GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 17699000
-  },
-  {
-    gambar: "url_gambar_msi_katana_a15_ryzen_7_8845hs_rtx4060.jpg",
-    brand: "MSI",
-    type: "KATANA A15 AI RYZEN 7 8845HS",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "8GB/16GB",
-    rom: "512GB",
-    layar: "15.6 QHD 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 20399000
-  },
-  
-  // MSI Katana 15
-  {
-    gambar: "url_gambar_msi_katana_15_i7_13620h_rtx4050.jpg",
-    brand: "MSI",
-    type: "KATANA 15 I7 13620H",
-    processor: "Intel i7 13620H",
-    ram: "6GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18249000
-  },
-  {
-    gambar: "url_gambar_msi_katana_17_i7_13620h_rtx3050.jpg",
-    brand: "MSI",
-    type: "KATANA 17 I7 13620H",
-    processor: "Intel i7 13620H",
-    ram: "6GB/16GB",
-    rom: "1TB",
-    layar: "17.3 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18499000
-  },
-  
-  // MSI Creator Z16HX
-  {
-    gambar: "url_gambar_msi_creator_z16hx_studio_touch_i7_13700hx.jpg",
-    brand: "MSI",
-    type: "CREATOR Z16HX STUDIO TOUCH",
-    processor: "Intel i7 13700HX",
-    ram: "8GB/32GB",
-    rom: "2TB",
-    layar: "16.0 QHD+ 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 38499000
-  },
-  
-  // MSI Thin A15
-  {
-    gambar: "url_gambar_msi_thin_a15_ryzen_5_7535hs_rtx2050.jpg",
-    brand: "MSI",
-    type: "THIN A15 RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11499000
-  },
-  {
-    gambar: "url_gambar_msi_thin_a15_ryzen_5_7535hs_rtx3050.jpg",
-    brand: "MSI",
-    type: "THIN A15 RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12999000
-  },
-  {
-    gambar: "url_gambar_msi_thin_a15_ryzen_5_7535hs_rtx4050.jpg",
-    brand: "MSI",
-    type: "THIN A15 RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "6GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13599000
-  },
-  {
-    gambar: "url_gambar_msi_thin_a15_ryzen_7_7735hs_rtx4060.jpg",
-    brand: "MSI",
-    type: "THIN A15 RYZEN 7 7735HS",
-    processor: "AMD Ryzen 7 7735HS",
-    ram: "8GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 17899000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_12450h_rtx2050_blk_12ucx_1013.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_12450h_rtx2050_blk_12ucx_244.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx2050_gry_b12ucx_2299.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx2050_gry_b12ucx_2401.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx2050_blk_b12ucx_2402.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_11400h_rtx3050_blk_11uc_1618.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 11400H",
-    processor: "Intel Core i5 11400H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 11249000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_11400h_rtx3050_blk_11uc_1635.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 11400H",
-    processor: "Intel Core i5 11400H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 11249000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_12450h_rtx2050_blk_12ucx_1013_16.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 11349000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx2050_gry_b12ucx_2401_16.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 11349000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_13420h_rtx2050_gry_b13ucx_1465.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 13420H",
-    processor: "Intel Core i5 13420H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 11449000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_13420h_rtx2050_gry_b13ucx_2410.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 13420H",
-    processor: "Intel Core i5 13420H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 11449000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_11400h_rtx3050_blk_11uc_1635_16.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 11400H",
-    processor: "Intel Core i5 11400H",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 11749000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_12450h_rtx3050_blk_12uc_1077.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 12049000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx3050_gry_b12uc_1674.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 12049000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx3050_gry_b12uc_2411.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 12049000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_13420h_rtx3050_gry_b13uc_1464.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 13420H",
-    processor: "Intel Core i5 13420H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Gray",
-    harga: 12249000
-  },
-  {
-    gambar: "url_gambar_msi_thin_gf63_i5_12450h_rtx3050_blk_12ucx_2024.jpg",
-    brand: "MSI",
-    type: "THIN GF63 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 12449000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_13420h_rtx3050_blk_b13ucx_1463.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 13420H",
-    processor: "Intel Core i5 13420H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 12649000
-  },
-  {
-    gambar: "url_gambar_msi_thin_15_i5_12450h_rtx3050_blk_b12uc_2412.jpg",
-    brand: "MSI",
-    type: "THIN 15 I5 12450H",
-    processor: "Intel Core i5 12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 12649000
-  },
-  {
-    gambar: "url_gambar_msi_raider_ge78hx_i9_14900hx_rtx4080_blk_14vhg_895.jpg",
-    brand: "MSI",
-    type: "RAIDER GE78HX I9 14900HX",
-    processor: "Intel Core i9 14900HX",
-    ram: "12GB/32GB",
-    rom: "2TB",
-    layar: "17.0 QHD+ 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 53399000
-  },
-  {
-    gambar: "url_gambar_msi_titan_18hx_19_i9_14900hx_rtx4080_blk_14vhg_028.jpg",
-    brand: "MSI",
-    type: "TITAN 18HX 19 I9 14900HX",
-    processor: "Intel Core i9 14900HX",
-    ram: "12GB/64GB",
-    rom: "2TB",
-    layar: "18.0 UHD+ 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 69499000
-  },
-  {
-    gambar: "url_gambar_acer_chromebook_311_c733_n4020.jpg",
-    brand: "ACER",
-    type: "CHROMEBOOK 311 C733 N4020",
-    processor: "Intel N4020",
-    ram: "4GB",
-    rom: "32GB",
-    layar: "11.6",
-    sistem_operasi: "CHROME",
-    warna: "Unknown",
-    harga: 4999000
-  },
-  {
-    gambar: "url_gambar_acer_travelmate_p214_i5_1135g7.jpg",
-    brand: "ACER",
-    type: "TRAVELMATE P214 I5 1135G7",
-    processor: "Intel i5-1135G7",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 13399000
-  },
-  {
-    gambar: "url_gambar_acer_travelmate_p40_i7_1165g7.jpg",
-    brand: "ACER",
-    type: "TRAVELMATE P40 I7 1165G7",
-    processor: "Intel i7-1165G7",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 11499000
-  },
-  {
-    gambar: "url_gambar_acer_travelmate_p214_i7_1165g7.jpg",
-    brand: "ACER",
-    type: "TRAVELMATE P214 I7 1165G7",
-    processor: "Intel i7-1165G7",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 15399000
-  },
-  {
-    gambar: "url_gambar_acer_travelmate_p414_i7_1260p.jpg",
-    brand: "ACER",
-    type: "TRAVELMATE P414 I7 1260P",
-    processor: "Intel i7-1260P",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11PRO",
-    warna: "Black",
-    harga: 22999000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_3_slim_a314_ryzen_7_5700.jpg",
-    brand: "ACER",
-    type: "ASPIRE 3 SLIM A314 RYZEN 7 5700",
-    processor: "AMD Ryzen 7 5700",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 10199000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_intel_n100_8gb_256gb.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 INTEL N100",
-    processor: "Intel N100",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6249000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_intel_n100_8gb_512gb.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 INTEL N100",
-    processor: "Intel N100",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6449000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_3_slim_a314_i3_n305_8core.jpg",
-    brand: "ACER",
-    type: "ASPIRE 3 SLIM A314 I3 N305 8CORE",
-    processor: "Intel i3 N305 8CORE",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7199000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_i3_1215.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7499000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_3_slim_a314_i3_n305_8core_512gb.jpg",
-    brand: "ACER",
-    type: "ASPIRE 3 SLIM A314 I3 N305 8CORE",
-    processor: "Intel i3 N305 8CORE",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7649000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_go_14_ag14_i3_n305.jpg",
-    brand: "ACER",
-    type: "ASPIRE GO 14 AG14 I3 N305",
-    processor: "Intel i3 N305",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7799000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_i3_1215_512gb.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 I3 1215",
-    processor: "Intel i3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7949000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_i5_1235.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 9799000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_lite_al14_i5_1235_16gb.jpg",
-    brand: "ACER",
-    type: "ASPIRE LITE AL14 I5 1235",
-    processor: "Intel i5 1235",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 10159000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_14_core_5_120u.jpg",
-    brand: "ACER",
-    type: "ASPIRE 14 CORE 5 120U",
-    processor: "Intel Core 5 120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11249000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_14_a14_i5_13420h.jpg",
-    brand: "ACER",
-    type: "ASPIRE 14 A14 I5 13420H",
-    processor: "Intel i5 13420H",
-    ram: "4GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11499000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_14_core_7_150u.jpg",
-    brand: "ACER",
-    type: "ASPIRE 14 CORE 7 150U",
-    processor: "Intel Core 7 150U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13999000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_5_slim_a514_i5_1335.jpg",
-    brand: "ACER",
-    type: "ASPIRE 5 SLIM A514 I5 1335",
-    processor: "Intel i5 1335",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 10199000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_5_slim_a514_i7_1355.jpg",
-    brand: "ACER",
-    type: "ASPIRE 5 SLIM A514 I7 1355",
-    processor: "Intel i7 1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13599000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_5_slim_a515_i9_13900h.jpg",
-    brand: "ACER",
-    type: "ASPIRE 5 SLIM A515 I9 13900H",
-    processor: "Intel i9 13900H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13499000
-  },
-  {
-    gambar: "url_gambar_acer_aspire_vero_av16_ultra_7.jpg",
-    brand: "ACER",
-    type: "ASPIRE VERO AV16 ULTRA 7",
-    processor: "Intel Ultra 7 155U",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 WUXGA 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 15599000
-  },
-  {
-    gambar: "acer_aspire_3_spin_a3sp14_touch_i3_n305_8core_8gb_512gb_w11_ohs_14_0wuxga_ips_2in1_gry_-31pt_35gn.jpg",
-    brand: "Acer",
-    type: "Aspire 3 Spin A3SP14 TOUCH",
-    processor: "Intel Core i3 N305 8Core",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 9399000
-  },
-  {
-    gambar: "acer_aspire_spin_asp14_touch_core_3_100u_16gb_512gb_w11_ohs_14_0wuxga_pen_2in1_gry_-51mtn_351c.jpg",
-    brand: "Acer",
-    type: "Aspire Spin ASP14 TOUCH",
-    processor: "Intel Core 3 100U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11599000
-  },
-  {
-    gambar: "acer_aspire_5_spin_a5sp14_touch_i5_1335_16gb_512gb_w11_ohs_14_0wuxga_fp_pen_2in1_gry_-51mtn_58f6.jpg",
-    brand: "Acer",
-    type: "Aspire 5 Spin A5SP14 TOUCH",
-    processor: "Intel Core i5 1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA FP PEN 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12549000
-  },
-  {
-    gambar: "acer_aspire_spin_14_asp14_touch_core_5_120u_16gb_512gb_w11_ohs_14_0wuxga_pen_2in1_gry_-51mtn_59ef.jpg",
-    brand: "Acer",
-    type: "Aspire Spin 14 ASP14 TOUCH",
-    processor: "Intel Core 5 120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13499000
-  },
-  {
-    gambar: "acer_aspire_5_spin_a5sp14_touch_i7_1355_16gb_512gb_w11_ohs_14_0wuxga_fp_pen_2in1_gry_-51mtn_7819.jpg",
-    brand: "Acer",
-    type: "Aspire 5 Spin A5SP14 TOUCH",
-    processor: "Intel Core i7 1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA FP PEN 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 14599000
-  },
-  {
-    gambar: "acer_aspire_spin_asp14_touch_core_7_150u_16gb_512gb_w11_ohs_14_0wuxga_pen_2in1_gry_-51mtn_74kv.jpg",
-    brand: "Acer",
-    type: "Aspire Spin ASP14 TOUCH",
-    processor: "Intel Core 7 150U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN 2in1",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 15179000
-  },
-  {
-    gambar: "acer_swift_edge_sfa16_oled_ryzen_5_6600_16gb_512gb_w11_ohs_16_0_4k_fp_blit_1_1kg_adp_blu_-41_r1qc.jpg",
-    brand: "Acer",
-    type: "Swift Edge SFA16 OLED",
-    processor: "AMD Ryzen 5 6600",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "16.0 4K FP",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12599000
-  },
-  {
-    gambar: "acer_swift_go_sfg14_ryzen_7_7730_16gb_512gb_w11_ohs_14_0fhd_ips_100s_rgb_slv_-41_r3zh.jpg",
-    brand: "Acer",
-    type: "Swift Go SFG14",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12399000
-  },
-  {
-    gambar: "acer_swift_3_oled_sf314_i5_12500h_16gb_512gb_w11_ohs_14_0_2_8k_90hz_evo_2y_adp_gld_-71_58u2.jpg",
-    brand: "Acer",
-    type: "Swift 3 OLED SF314",
-    processor: "Intel Core i5 12500H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 12649000
-  },
-  {
-    gambar: "acer_swift_go_sfg14_oled_i5_13500h_16gb_512gb_w11_ohs_14_0_2_8k_90hz_fp_evo_2y_adp_gld_-71_59wx.jpg",
-    brand: "Acer",
-    type: "Swift Go SFG14 OLED",
-    processor: "Intel Core i5 13500H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 90Hz FP EVO",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 13399000
-  },
-  {
-    gambar: "acer_swift_5_sf514_aerospace_touch_i5_1240p_16gb_512gb_w11_ohs_14_0qhd_ips_100s_rgb_fp_blit_evo_2y_grn_gld_-56t_591f.jpg",
-    brand: "Acer",
-    type: "Swift 5 SF514 Aerospace TOUCH",
-    processor: "Intel Core i5 1240P",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 QHD IPS 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Green/Gold",
-    harga: 14199000
-  },
-  {
-    gambar: "acer_swift_14_sf14_touch_i5_13500h_16gb_512gb_w11_ohs_14_0wqxga_100s_rgb_evo_2y_1adp_grn_-71t_58f1.jpg",
-    brand: "Acer",
-    type: "Swift 14 SF14 TOUCH",
-    processor: "Intel Core i5 13500H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WQXGA 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Green",
-    harga: 17999000
-  },
-  {
-    gambar: "acer_swift_go_sfg14_touch_i7_13700h_16gb_1tb_w11_ohs_14_0wuxga_fp_2y_adp_slv_-71t_77as.jpg",
-    brand: "Acer",
-    type: "Swift Go SFG14 TOUCH",
-    processor: "Intel Core i7 13700H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA FP",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15349000
-  },
-  {
-    gambar: "acer_swift_go_sfg14_ultra_5_125h_16gb_512gb_w11_ohs_14_0_2_8k_100s_rgb_2y_adp_-73_5135.jpg",
-    brand: "Acer",
-    type: "Swift Go SFG14 ULTRA 5",
-    processor: "Intel Core i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 13149000
-  },
-  {
-    gambar: "acer_swift_go_oled_sfg14_ultra_5_125h_32gb_512gb_w11_ohs_14_0_2_8k_90hz_evo_2y_adp_slv_-73_56a7.jpg",
-    brand: "Acer",
-    type: "Swift Go OLED SFG14 ULTRA 5",
-    processor: "Intel Core i5 125H",
-    ram: "32GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15449000
-  },
-  {
-    gambar: "acer_swift_x_14_oled_sfx14_ultra_7_155h_rtx4050_6gb_32gb_1tb_w11_ohs_14_5_2_8k_120hz_2y_adp_-72g_79py.jpg",
-    brand: "Acer",
-    type: "Swift X 14 OLED SFX14 ULTRA 7",
-    processor: "Intel Core i7 155H RTX4050",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 25899000
-  },
-  {
-    gambar: "acer_swift_x_14_oled_sfx14_ultra_7_155h_rtx4060_8gb_32gb_1tb_w11_ohs_14_5_2_8k_120hz_2y_adp_-72g_70k8.jpg",
-    brand: "Acer",
-    type: "Swift X 14 OLED SFX14 ULTRA 7",
-    processor: "Intel Core i7 155H RTX4060",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 27999000
-  },
-  {
-    gambar: "acer_swift_go_touch_sfg14_ultra_9_185h_32gb_1tb_w11_ohs_14_0wuxga_100s_rgb_evo_2y_adp_-73t_94qb.jpg",
-    brand: "Acer",
-    type: "Swift Go TOUCH SFG14 ULTRA 9",
-    processor: "Intel Core i7 185H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 19049000
-  },
-  {
-    gambar: "acer_swift_go_oled_sfg14_ultra_9_185h_32gb_1tb_w11_ohs_14_0_2_8k_90hz_2y_adp_blue_-73_9686.jpg",
-    brand: "Acer",
-    type: "Swift Go OLED SFG14 ULTRA 9",
-    processor: "Intel Core i7 185H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 19699000
-  },
-  {
-    gambar: "acer_nitro_v_15_ryzen_5_7535hs_rtx2050_4gb_8gb_512gb_w11_ohs_15_6fhd_144hz_2y_adp_blk_-41_r2vj.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12299000
-  },
-  {
-    gambar: "acer_nitro_v_16_ryzen_7_8845hs_rtx4050_6gb_16gb_512gb_w11_ohs_16_0wuxga_165hz_ips_2y_adp_blk_-41_r77x.jpg",
-    brand: "Acer",
-    type: "Nitro V 16",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "16.0 WUXGA 165Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18099000
-  },
-  {
-    gambar: "acer_nitro_v_15_i5_13420h_rtx2050_4gb_8gb_512gb_w11_ohs_15_6fhd_144hz_ips_2yr_adp_blk_-51_542g.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i5 13420H",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12099000
-  },
-  {
-    gambar: "acer_nitro_5_15_an515_i5_11400h_rtx3050ti_4gb_8gb_512gb_w11_ohs_15_6fhd_144hz_4zrgb_blk_-57_5534.jpg",
-    brand: "Acer",
-    type: "Nitro 5 15 AN515",
-    processor: "Intel Core i5 11400H",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 13499000
-  },
-  {
-    gambar: "acer_nitro_v_15_i5_13420h_rtx3050_6gb_8gb_512gb_w11_ohs_15_6fhd_144hz_blit_2yr_adp_blk_-51_53wr.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i5 13420H",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 13999000
-  },
-  {
-    gambar: "acer_nitro_5_15_an515_i5_12500h_rtx3050_4gb_16gb_512gb_w11_ohs_15_6fhd_144hz_4zrgb_blk_-58_55e6_16.jpg",
-    brand: "Acer",
-    type: "Nitro 5 15 AN515",
-    processor: "Intel Core i5 12500H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 14149000
-  },
-  {
-    gambar: "acer_nitro_v_15_i5_13420h_rtx4050_6gb_8gb_512gb_w11_ohs_15_6fhd_144hz_ips_2yr_adp_blk_-51_5115.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i5 13420H",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 15649000
-  },
-  {
-    gambar: "acer_nitro_v_15_i7_13620h_rtx2050_4gb_16gb_512gb_w11_ohs_15_6fhd_144hz_ips_2yr_adp_blk_-51_79y1.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i7 13620H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 15199000
-  },
-  {
-    gambar: "acer_nitro_5_15_an515_i7_12650h_rtx4060_8gb_16gb_512gb_w11_ohs_15_6wuxga_165hz_100s_rgb_4zrgb_blk_-58_710q.jpg",
-    brand: "Acer",
-    type: "Nitro 5 15 AN515",
-    processor: "Intel Core i7 12650H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 WUXGA 165Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18699000
-  },
-  {
-    gambar: "acer_nitro_v_15_i9_13900h_rtx4060_8gb_16gb_512gb_w11_ohs_15_6fhd_144hz_ips_blit_2y_adp_blk_-51_901s.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i9 13900H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 19799000
-  },
-  {
-    gambar: "acer_nitro_v_15_i9_13900h_rtx4060_8gb_32gb_1tb_w11_ohs_15_6fhd_144hz_ips_blit_2y_adp_blk_-51_901s.jpg",
-    brand: "Acer",
-    type: "Nitro V 15",
-    processor: "Intel Core i9 13900H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 20899000
-  },
-  {
-    gambar: "acer_predator_triton_16_ultra_9_185h_rtx4060_8gb_32gb_1tb_w11_ohs_16_0_wqxga_240hz_100dcip3_gry.jpg",
-    brand: "Acer",
-    type: "Predator Triton 16 Ultra 9",
-    processor: "Intel Core i9 185H RTX4060",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA 240Hz 100% DCI-P3",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 31299000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i5_14500hx_rtx4050_6gb_8gb_512gb_w11_ohs_16_0_wuxga_180hz_srgb100_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i5 14500HX RTX4050",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "16.0 WUXGA 180Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 19199000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i5_14500hx_rtx4060_8gb_8gb_512gb_w11_ohs_16_0_wqxga_165hz_srgb100_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i5 14500HX RTX4060",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "16.0 WQXGA 165Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 21399000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i7_14700hx_rtx4050_6gb_16gb_512gb_w11_ohs_16_0_wuxga_165hz_srgb100_4zrgb_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i7 14700HX RTX4050",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "16.0 WUXGA 165Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 22599000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i7_13700hx_rtx4060_8gb_16gb_1tb_w11_ohs_16_0_wqxga_165hz_srgb100_4zrgb_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i7 13700HX RTX4060",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA 165Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 23249000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i9_13900hx_rtx4060_8gb_16gb_1tb_w11_ohs_16_0_wqxga_165hz_srgb100_4zrgb_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i9 13900HX RTX4060",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA 165Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 25199000
-  },
-  {
-    gambar: "acer_predator_helios_neo_16_i9_14900hx_rtx4060_8gb_16gb_1tb_w11_ohs_16_0_wqxga_165hz_srgb100_4zrgb_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 16",
-    processor: "Intel Core i9 14900HX RTX4060",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA 165Hz sRGB100",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 28349000
-  },
-  {
-    gambar: "acer_predator_helios_16_i9_14900hx_rtx4080_12gb_32gb_1tb_w11_ohs_16_0_wqxga_miniled_250hz_100dcip3_pkrgb_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios 16",
-    processor: "Intel Core i9 14900HX RTX4080",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA MiniLED 250Hz 100% DCI-P3",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 49099000
-  },
-  {
-    gambar: "acer_predator_helios_neo_14_ultra_9_185h_rtx4060_8gb_32gb_1tb_w11_ohs_14_5_wqxga_165hz_3zrgb_3y_adp_blk.jpg",
-    brand: "Acer",
-    type: "Predator Helios Neo 14 Ultra 9",
-    processor: "Intel Core i9 185H RTX4060",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 WQXGA 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 28599000
-  },
-  {
-    gambar: "hp_245_g10_ryzen_3_7320_8gb_256gb_w11_14_0_slim_bezel_blk.jpg",
-    brand: "HP",
-    type: "245 G10",
-    processor: "Ryzen 3 7320",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 Slim Bezel",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 6699000
-  },
-  {
-    gambar: "hp_245_g8_ryzen_5_5500_8gb_512gb_w11_14_0_slim_bezel_blk.jpg",
-    brand: "HP",
-    type: "245 G8",
-    processor: "Ryzen 5 5500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 Slim Bezel",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 7999000
-  },
-  {
-    gambar: "hp_245_g9_ryzen_5_5625_8gb_512gb_w11_14_0_slim_bezel_blk.jpg",
-    brand: "HP",
-    type: "245 G9",
-    processor: "Ryzen 5 5625",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 Slim Bezel",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 8099000
-  },
-  {
-    gambar: "hp_probook_440_g10_i7_1355_16gb_512gb_w11pro_14_0fhd_slv.jpg",
-    brand: "HP",
-    type: "ProBook 440 G10",
-    processor: "Intel Core i7 1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11PRO",
-    warna: "Silver",
-    harga: 19999000
-  },
-  {
-    gambar: "hp_elitebook_845_g9_ryzen_9_6950hs_16gb_1tb_w11pro_14_0wuxga_slv.jpg",
-    brand: "HP",
-    type: "EliteBook 845 G9",
-    processor: "Ryzen 9 6950HS",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11PRO",
-    warna: "Silver",
-    harga: 18299000
-  },
-  {
-    gambar: "hp_14_athlon_silver_3050_4gb_512gb_w11_14_0_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Athlon Silver 3050",
-    processor: "Athlon Silver 3050",
-    ram: "4GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6149000
-  },
-  {
-    gambar: "hp_14_athlon_silver_3050_8gb_512gb_w11_14_0_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Athlon Silver 3050",
-    processor: "Athlon Silver 3050",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6349000
-  },
-  {
-    gambar: "hp_14_athlon_7120_8gb_512gb_w11_14_0fhd_ips_blit_slv.jpg",
-    brand: "HP",
-    type: "14 Athlon 7120",
-    processor: "Athlon 7120",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6399000
-  },
-  {
-    gambar: "hp_14_ryzen_3_5300_8gb_512gb_w11_14_0fhd_ips_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Ryzen 3 5300",
-    processor: "Ryzen 3 5300",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7079000
-  },
-  {
-    gambar: "hp_14_ryzen_3_5300_16gb_512gb_w11_14_0fhd_ips_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Ryzen 3 5300",
-    processor: "Ryzen 3 5300",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7499000
-  },
-  {
-    gambar: "hp_14_ryzen_5_5500_8gb_512gb_w11_14_0fhd_ips_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Ryzen 5 5500",
-    processor: "Ryzen 5 5500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 8138000
-  },
-  {
-    gambar: "hp_14_ryzen_5_5500_16gb_512gb_w11_14_0fhd_ips_blit_2y_slv.jpg",
-    brand: "HP",
-    type: "14 Ryzen 5 5500",
-    processor: "Ryzen 5 5500",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 8599000
-  },
-  {
-    gambar: "hp_14_n4500_4gb_256gb_w11_14_0_blit_slv_dq3110tu.jpg",
-    brand: "HP",
-    type: "14 N4500",
-    processor: "Intel Celeron N4500",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "14.0 BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 5679000
-  },
-  {
-    gambar: "hp_14_n4500_8gb_256gb_w11_14_0_blit_slv_dq3109tu.jpg",
-    brand: "HP",
-    type: "14 N4500",
-    processor: "Intel Celeron N4500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 5849000
-  },
-  {
-    gambar: "hp_14_n4500_8gb_512gb_w11_14_0_blit_slv_dq3110tu_8512.jpg",
-    brand: "HP",
-    type: "14 N4500",
-    processor: "Intel Celeron N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6149000
-  },
-  {
-    gambar: "hp_14_i3_1215_8gb_256gb_w11_14_0fhd_blit_slv_dq5777tu.jpg",
-    brand: "HP",
-    type: "14 I3 1215",
-    processor: "Intel Core i3-1215",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7299000
-  },
-  {
-    gambar: "hp_14_i3_1215_4gb_512gb_w11_14_0fhd_blit_slv_dq5115tu.jpg",
-    brand: "HP",
-    type: "14 I3 1215",
-    processor: "Intel Core i3-1215",
-    ram: "4GB",
-    rom: "512GB",
-    layar: "14.0 FHD BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7399000
-  },
-  {
-    gambar: "hp_14_i3_1215_8gb_512gb_w11_14_0fhd_blit_slv_dq5115tu_8.jpg",
-    brand: "HP",
-    type: "14 I3 1215",
-    processor: "Intel Core i3-1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7599000
-  },
-  {
-    gambar: "hp_14_i3_1215_8gb_512gb_w11_14_0fhd_blit_box_mou_z3700_slv_ep0555tu.jpg",
-    brand: "HP",
-    type: "14 I3 1215",
-    processor: "Intel Core i3-1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD BLIT (Box MOU Z3700)",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 8499000
-  },
-  {
-    gambar: "hp_14_i5_1155g7_8gb_512gb_w11_14_0fhd_ips_blit_gld_dq4028tu.jpg",
-    brand: "HP",
-    type: "14 I5 1155G7",
-    processor: "Intel Core i5-1155G7",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 9299000
-  },
-  {
-    gambar: "hp_14_i5_1235_8gb_256gb_w11_14_0fhd_ips_blit_slv_dq5153tu.jpg",
-    brand: "HP",
-    type: "14 I5 1235",
-    processor: "Intel Core i5-1235",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 9649000
-  },
-  {
-    gambar: "hp_14_i5_1155g7_16gb_512gb_w11_14_0fhd_ips_blit_slv_dq4016tu_16.jpg",
-    brand: "HP",
-    type: "14 I5 1155G7",
-    processor: "Intel Core i5-1155G7",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 9749000
-  },
-  {
-    gambar: "hp_14_i5_1235_8gb_512gb_w11_14_0fhd_ips_blit_slv_dq5152tu.jpg",
-    brand: "HP",
-    type: "14 I5 1235",
-    processor: "Intel Core i5-1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 10049900
-  },
-  {
-    gambar: "hp_14_i5_1335_8gb_512gb_w11_14_0fhd_ips_blit_slv_ep0001tu.jpg",
-    brand: "HP",
-    type: "14 I5 1335",
-    processor: "Intel Core i5-1335",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 10599000
-  },
-  {
-    gambar: "hp_14_i7_1255_16gb_512gb_w11_14_0fhd_ips_blit_slv_dq5120tu.jpg",
-    brand: "HP",
-    type: "14 I7 1255",
-    processor: "Intel Core i7-1255",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12399000
-  },
-  {
-    gambar: "hp_14_i7_1355_16gb_512gb_w11_14_0fhd_ips_blit_fp_blu_ep0018tu.jpg",
-    brand: "HP",
-    type: "14 I7 1355",
-    processor: "Intel Core i7-1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS BLIT FP",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 14099000
-  },
-  {
-    gambar: "hp_15_i7_1355_mx570a_2gb_16gb_512gb_w11_15_6fhd_ips_blit_slv_fd0888tu.jpg",
-    brand: "HP",
-    type: "15 I7 1355 MX570A",
-    processor: "Intel Core i7-1355 MX570A",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15499000
-  },
-  {
-    gambar: "hp_15_ultra_5_125h_16gb_512gb_w11_15_6fhd_ips_blit_slv_fd1111tu.jpg",
-    brand: "HP",
-    type: "15 ULTRA 5 125H",
-    processor: "Intel Core i5-125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12199000
-  },
-  {
-    gambar: "hp_15_ultra_5_125h_16gb_512gb_w11_15_6fhd_ips_blit_blu_fd1222tu.jpg",
-    brand: "HP",
-    type: "15 ULTRA 5 125H",
-    processor: "Intel Core i5-125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12199000
-  },
-  {
-    gambar: "hp_15_ultra_7_155h_16gb_512gb_w11_15_6fhd_ips_blit_blu_fd1555tu.jpg",
-    brand: "HP",
-    type: "15 ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 14399000
-  },
-  {
-    gambar: "hp_15_ultra_7_155h_16gb_512gb_w11_15_6fhd_ips_blit_slv_fd1777tu.jpg",
-    brand: "HP",
-    type: "15 ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 14399000
-  },
-  // HP Pavilion Plus series
-  {
-    gambar: "hp_pavilion_plus_14_ryzen_5_7540_16gb_512gb_w11_14_0wuxga_blit_slv_ey0016au.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 RYZEN 5 7540",
-    processor: "AMD Ryzen 5 7540",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12349000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_ryzen_5_7540_16gb_512gb_w11_14_0wuxga_blit_blu_ey0017au.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 RYZEN 5 7540",
-    processor: "AMD Ryzen 5 7540",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12349000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_ryzen_5_7540_16gb_512gb_w11_14_0wuxga_blit_pnk_ey0018au.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 RYZEN 5 7540",
-    processor: "AMD Ryzen 5 7540",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Pink",
-    harga: 12349000
-  },
-  {
-    gambar: "hp_pavilion_aero_13_ryzen_5_8640_16gb_512gb_w11_13_3wuxga_ips_slv_bg0111au.jpg",
-    brand: "HP",
-    type: "PAVILION AERO 13 RYZEN 5 8640",
-    processor: "AMD Ryzen 5 8640",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "13.3 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15099000
-  },
-  {
-    gambar: "hp_pavilion_aero_13_ryzen_5_8640_16gb_512gb_w11_13_3wuxga_ips_blue_bg0222au.jpg",
-    brand: "HP",
-    type: "PAVILION AERO 13 RYZEN 5 8640",
-    processor: "AMD Ryzen 5 8640",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "13.3 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 15099000
-  },
-  {
-    gambar: "hp_pavilion_aero_13_ryzen_7_8840_16gb_1tb_w11_13_3wuxga_ips_slv_bg0777au.jpg",
-    brand: "HP",
-    type: "PAVILION AERO 13 RYZEN 7 8840",
-    processor: "AMD Ryzen 7 8840",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "13.3 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 16499000
-  },
-  {
-    gambar: "hp_pavilion_aero_13_ryzen_7_8840_16gb_1tb_w11_13_3wuxga_ips_blue_bg0888au.jpg",
-    brand: "HP",
-    type: "PAVILION AERO 13 RYZEN 7 8840",
-    processor: "AMD Ryzen 7 8840",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "13.3 WUXGA IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 16499000
-  },
-  // HP Pavilion Plus I5 series
-  {
-    gambar: "hp_pavilion_plus_14_i5_1335_16gb_512gb_w11_14_0wuxga_ips_blu_ew0021tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 I5 1335",
-    processor: "Intel Core i5-1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA IPS BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12699000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_i5_1335_16gb_512gb_w11_14_0wuxga_ips_slv_ew0077tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 I5 1335",
-    processor: "Intel Core i5-1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WQXGA VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15999000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_i5_1335_16gb_512gb_w11_14_0wqvga_vrr_120hz_pnk_ew0079tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 I5 1335",
-    processor: "Intel Core i5-1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WQXGA VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Pink",
-    harga: 15999000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_i7_1355_16gb_1tb_w11_14_0_2k_120hz_blit_pnk_ew0017tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED I7 1355",
-    processor: "Intel Core i7-1355",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Pink",
-    harga: 17699000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_i7_1355_16gb_1tb_w11_14_0_2k_vrr_120hz_slv_ew0080tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED I7 1355",
-    processor: "Intel Core i7-1355",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 18899000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_i7_1355_16gb_1tb_w11_14_0_2k_vrr_120hz_blu_ew0081tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED I7 1355",
-    processor: "Intel Core i7-1355",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 18899000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_i7_1355_16gb_1tb_w11_14_0_2k_vrr_120hz_pink_ew0082tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED I7 1355",
-    processor: "Intel Core i7-1355",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Pink",
-    harga: 18899000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_ultra_5_125h_16gb_1tb_w11_14_0_2k_vrr_120hz_slv_ew1002tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED ULTRA 5 125H",
-    processor: "Intel Core i5-125H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 17199000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_ultra_5_125h_16gb_1tb_w11_14_0_2k_vrr_120hz_blu_ew1003tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED ULTRA 5 125H",
-    processor: "Intel Core i5-125H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 17199000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_ultra_7_155h_32gb_1tb_w11_14_0_2k_vrr_120hz_slv_ew1005tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 21399000
-  },
-  {
-    gambar: "hp_pavilion_plus_14_oled_ultra_7_155h_32gb_1tb_w11_14_0_2k_vrr_120hz_blu_ew1006tu.jpg",
-    brand: "HP",
-    type: "PAVILION PLUS 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 21399000
-  },
-  // HP Pavilion 16 series
-  {
-    gambar: "hp_pavilion_16_touch_ultra_5_125u_16gb_1tb_w11_16_0wuxga_blit_silv_af0777tu.jpg",
-    brand: "HP",
-    type: "PAVILION 16 TOUCH ULTRA 5 125U",
-    processor: "Intel Core i5-125U",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 WUXGA BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 14849000
-  },
-  {
-    gambar: "hp_pavilion_16_touch_ultra_7_155u_mx570a_4gb_32gb_1tb_w11_16_0wuxga_blit_silv_af0888tx.jpg",
-    brand: "HP",
-    type: "PAVILION 16 TOUCH ULTRA 7 155U",
-    processor: "Intel Core i7-155U MX570A",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "16.0 WUXGA BLIT",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 19299000
-  },
-  // HP Pavilion X360 series
-  {
-    gambar: "hp_pavilion_x360_14_touch_i3_1315_8gb_512gb_w11_14_0fhd_ips_blu_ek1095tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH I3 1315",
-    processor: "Intel Core i3-1315",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 11399000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_3_100u_8gb_512gb_w11_14_0fhd_ips_blu_ek2051tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 3 100U",
-    processor: "Intel Core i3-100U",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 11599000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_5_120u_16gb_512gb_w11_14_0fhd_ips_fp_pen_720p_cam_blu_ek2333tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 5 120U",
-    processor: "Intel Core i5-120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS FP PEN 720P CAM",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 15099000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_5_120u_16gb_512gb_w11_14_0fhd_ips_fp_pen_slv_ek2111tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 5 120U",
-    processor: "Intel Core i5-120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS FP PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15299000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_5_120u_16gb_512gb_w11_14_0fhd_ips_fp_pen_gld_ek2222tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 5 120U",
-    processor: "Intel Core i5-120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS FP PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 15299000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_7_150u_16gb_512gb_w11_14_0fhd_ips_fp_pen_720p_cam_blu_ek2555tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 7 150U",
-    processor: "Intel Core i7-150U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS FP PEN 720P CAM",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 16499000
-  },
-  {
-    gambar: "hp_pavilion_x360_14_touch_core_7_150u_16gb_512gb_w11_14_0fhd_ips_fp_pen_720p_cam_gld_ek2666tu.jpg",
-    brand: "HP",
-    type: "PAVILION X360 14 TOUCH CORE 7 150U",
-    processor: "Intel Core i7-150U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS FP PEN 720P CAM",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 16699000
-  },
-  // HP Envy X360 series
-  {
-    gambar: "hp_envy_x360_14_oled_ryzen_7_8840hs_32gb_1tb_w11_14_0_2k_120hz_slv_fa0888au.jpg",
-    brand: "HP",
-    type: "ENVY X360 14 OLED RYZEN 7 8840HS",
-    processor: "AMD Ryzen 7 8840HS",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 22399000
-  },
-  {
-    gambar: "hp_envy_x360_14_oled_ultra_5_125u_16gb_512gb_w11_14_0_2k_120hz_slv_fc0555tu.jpg",
-    brand: "HP",
-    type: "ENVY X360 14 OLED ULTRA 5 125U",
-    processor: "Intel Core i5-125U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 18699000
-  },
-  {
-    gambar: "hp_envy_x360_14_oled_ultra_5_125u_16gb_512gb_w11_14_0_2k_120hz_blu_fc0666tu.jpg",
-    brand: "HP",
-    type: "ENVY X360 14 OLED ULTRA 5 125U",
-    processor: "Intel Core i5-125U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 18699000
-  },
-  {
-    gambar: "hp_envy_x360_14_oled_ultra_7_155u_16gb_1tb_w11_14_0_2k_120hz_slv_fc0777tu.jpg",
-    brand: "HP",
-    type: "ENVY X360 14 OLED ULTRA 7 155U",
-    processor: "Intel Core i7-155U",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 21299000
-  },
-  {
-    gambar: "hp_envy_x360_14_oled_ultra_7_155u_16gb_1tb_w11_14_0_2k_120hz_blu_fc0888tu.jpg",
-    brand: "HP",
-    type: "ENVY X360 14 OLED ULTRA 7 155U",
-    processor: "Intel Core i7-155U",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120HZ",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 21299000
-  },
-  {
-    gambar: "hp_spectre_x360_14_oled_ultra_7_155h_32gb_1tb_w11_14_0_2k_120hz_blit_pen_2y_adp_2in1_evo_black_eu0004tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 28499000
-  },
-  {
-    gambar: "hp_spectre_x360_14_oled_ultra_7_155h_32gb_1tb_w11_14_0_2k_120hz_blit_pen_2y_adp_2in1_evo_blk_eu0071tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 28499000
-  },
-  {
-    gambar: "hp_spectre_x360_14_oled_ultra_7_155h_32gb_1tb_w11_14_0_2k_120hz_blit_pen_2y_adp_2in1_evo_blu_eu0072tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 28499000
-  },
-  {
-    gambar: "hp_spectre_x360_14_oled_ultra_7_155h_32gb_2tb_w11_14_0_2k_120hz_blit_pen_2y_adp_2in1_evo_blue_eu0005tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "2TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 30499000
-  },
-  {
-    gambar: "hp_spectre_x360_14_oled_ultra_7_155h_32gb_2tb_w11_14_0_2k_120hz_blit_pen_2y_adp_2in1_blk_eu0069tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 14 OLED ULTRA 7 155H",
-    processor: "Intel Core i7-155H",
-    ram: "32GB",
-    rom: "2TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 30499000
-  },
-  {
-    gambar: "hp_spectre_x360_17_fold_touch_oled_i7_1250_16gb_1tb_w11_17_0_2k_pen_evo_2y_blu_cs0005tu.jpg",
-    brand: "HP",
-    type: "SPECTRE X360 17 FOLD TOUCH OLED",
-    processor: "Intel Core i7-1250",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "17.0 2.5K",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 42899000
-  },
-  {
-    gambar: "hp_victus_15_ryzen_5_7535hs_rtx2050_4gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_slv_fb1011ax.jpg",
-    brand: "HP",
-    type: "VICTUS 15 RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 11449000
-  },
-  {
-    gambar: "hp_victus_15_ryzen_5_7535hs_rtx2050_4gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_blu_fb1889ax.jpg",
-    brand: "HP",
-    type: "VICTUS 15 RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 11449000
-  },
-  {
-    gambar: "hp_victus_15_ryzen_5_8645hs_rtx3050_6gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_slv_fb2777ax.jpg",
-    brand: "HP",
-    type: "VICTUS 15 RYZEN 5 8645HS",
-    processor: "AMD Ryzen 5 8645HS",
-    ram: "6GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 13499000
-  },
-  {
-    gambar: "hp_victus_15_ryzen_5_8645hs_rtx4050_6gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_wht_fb2665ax.jpg",
-    brand: "HP",
-    type: "VICTUS 15 RYZEN 5 8645HS",
-    processor: "AMD Ryzen 5 8645HS",
-    ram: "6GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "White",
-    harga: 15799000
-  },
-  {
-    gambar: "hp_victus_15_ryzen_5_8645hs_rtx4060_8gb_16gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_blu_fb2997ax.jpg",
-    brand: "HP",
-    type: "VICTUS 15 RYZEN 5 8645HS",
-    processor: "AMD Ryzen 5 8645HS",
-    ram: "8GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 17299000
-  },
-  {
-    gambar: "hp_victus_16_ryzen_5_8645hs_rtx4060_8gb_16gb_1tb_w11_16_1fhd_144hz_rgb_2y_adp_slv_s1002ax.jpg",
-    brand: "HP",
-    type: "VICTUS 16 RYZEN 5 8645HS",
-    processor: "AMD Ryzen 5 8645HS",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.1 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 18099000
-  },
-  {
-    gambar: "hp_victus_16_ryzen_7_8845hs_rtx4070_8gb_16gb_1tb_w11_16_1fhd_165hz_100sRGB_rgb_2y_adp_wht_s1010ax.jpg",
-    brand: "HP",
-    type: "VICTUS 16 RYZEN 7 8845HS",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.1 FHD 165Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "White",
-    harga: 23599000
-  },
-  {
-    gambar: "hp_omen_16_ryzen_7_7745hs_rtx4060_8gb_16gb_512gb_w11_16_1fhd_144hz_rgb_2y_adp_blk_eu0053ax.jpg",
-    brand: "HP",
-    type: "OMEN 16 RYZEN 7 7745HS",
-    processor: "AMD Ryzen 7 7745HS",
-    ram: "8GB/16GB",
-    rom: "512GB",
-    layar: "16.1 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18899000
-  },
-  {
-    gambar: "hp_omen_16_ryzen_7_7745hs_rtx4070_12gb_32gb_1tb_w11_16_1fhd_165hz_100srgb_rgb_2y_adp_blk_eu0084ax.jpg",
-    brand: "HP",
-    type: "OMEN 16 RYZEN 7 7745HS",
-    processor: "AMD Ryzen 7 7745HS",
-    ram: "12GB/32GB",
-    rom: "1TB",
-    layar: "16.1 FHD 165Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 28299000
-  },
-  {
-    gambar: "hp_omen_17_ryzen_7_7745hs_rtx4060_12gb_32gb_1tb_w11_17_3fhd_144hz_100srgb_rgb_2y_adp_blk_eu0055ax.jpg",
-    brand: "HP",
-    type: "OMEN 17 RYZEN 7 7745HS",
-    processor: "AMD Ryzen 7 7745HS",
-    ram: "12GB/32GB",
-    rom: "1TB",
-    layar: "17.3 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 30399000
-  },
-  {
-    gambar: "hp_omen_17_ryzen_9_7945hx_rtx4080_16gb_32gb_1tb_w11_17_3fhd_165hz_100srgb_rgb_2y_adp_blk_eu0077ax.jpg",
-    brand: "HP",
-    type: "OMEN 17 RYZEN 9 7945HX",
-    processor: "AMD Ryzen 9 7945HX",
-    ram: "16GB/32GB",
-    rom: "1TB",
-    layar: "17.3 FHD 165Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 38899000
-  },
-  {
-    gambar: "hp_victus_15_i5_12450h_rtx2050_4gb_8gb_512gb_w11_15_6fhd_ips_144hz_blit_2y_adp_slv_fa1094tx.jpg",
-    brand: "HP",
-    type: "VICTUS 15 I5 12450H RTX2050",
-    processor: "Intel Core i5-12450H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 11739000
-  },
-  {
-    gambar: "hp_victus_15_i5_12450h_rtx2050_4gb_16gb_512gb_w11_15_6fhd_ips_144hz_blit_2y_adp_slv_fa1094tx_16.jpg",
-    brand: "HP",
-    type: "VICTUS 15 I5 12450H RTX2050",
-    processor: "Intel Core i5-12450H",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD IPS 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12239000
-  },
-  {
-    gambar: "hp_victus_15_i5_13420h_rtx3050_6gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_blu_fa1789tx.jpg",
-    brand: "HP",
-    type: "VICTUS 15 I5 13420H RTX3050",
-    processor: "Intel Core i5-13420H",
-    ram: "6GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 13899000
-  },
-  {
-    gambar: "hp_victus_15_i5_13500h_rtx4050_6gb_8gb_512gb_w11_15_6fhd_144hz_blit_2y_adp_slv_fa1515tx.jpg",
-    brand: "HP",
-    type: "VICTUS 15 I5 13500H RTX4050",
-    processor: "Intel Core i5-13500H",
-    ram: "6GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 15699000
-  },
-  {
-    gambar: "hp_victus_16_i5_13500hx_rtx4050_6gb_16gb_512gb_w11_16_1fhd_144hz_100srgb_rgb_2y_adp_slv_r0889tx.jpg",
-    brand: "HP",
-    type: "VICTUS 16 I5 13500HX RTX4050",
-    processor: "Intel Core i5-13500HX",
-    ram: "6GB/16GB",
-    rom: "512GB",
-    layar: "16.1 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 16699000
-  },
-  {
-    gambar: "hp_victus_16_i5_14450hx_rtx4060_8gb_16gb_512gb_w11_16_1fhd_144hz_100srgb_rgb_2y_adp_slv_r1206tx.jpg",
-    brand: "HP",
-    type: "VICTUS 16 I5 14450HX RTX4060",
-    processor: "Intel Core i5-14450HX",
-    ram: "8GB/16GB",
-    rom: "512GB",
-    layar: "16.1 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 20099000
-  },
-  {
-    gambar: "hp_victus_16_i7_14650hx_rtx4060_8gb_16gb_1tb_w11_16_1fhd_144hz_100srgb_rgb_2y_adp_slv_r1209tx.jpg",
-    brand: "HP",
-    type: "VICTUS 16 I7 14650HX RTX4060",
-    processor: "Intel Core i7-14650HX",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.1 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 23499000
-  },
-  {
-    gambar: "hp_victus_16_i7_14650hx_rtx4070_8gb_16gb_1tb_w11_16_1fhd_165hz_100srgb_rgb_2y_adp_bl_r1218tx.jpg",
-    brand: "HP",
-    type: "VICTUS 16 I7 14650HX RTX4070",
-    processor: "Intel Core i7-14650HX",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.1 FHD 165Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 26699000
-  },
-  // HP OMEN
-  {
-    gambar: "hp_omen_14_oled_ultra_7_155h_rtx4060_8gb_16gb_1tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_wht_fb0053tx.jpg",
-    brand: "HP",
-    type: "OMEN 14 OLED ULTRA 7 155H RTX4060",
-    processor: "Intel Core i7-155H",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "White",
-    harga: 31299000
-  },
-  {
-    gambar: "hp_omen_14_oled_ultra_7_155h_rtx4060_8gb_16gb_1tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_blk_fb0054tx.jpg",
-    brand: "HP",
-    type: "OMEN 14 OLED ULTRA 7 155H RTX4060",
-    processor: "Intel Core i7-155H",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 31299000
-  },
-  {
-    gambar: "hp_omen_transcend_14_oled_ultra_9_185h_rtx4060_6gb_32gb_1tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_wht_fb0666tx.jpg",
-    brand: "HP",
-    type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4060",
-    processor: "Intel Core i9-185H",
-    ram: "6GB/32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "White",
-    harga: 35499000
-  },
-  {
-    gambar: "hp_omen_transcend_14_oled_ultra_9_185h_rtx4060_6gb_32gb_1tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_blk_fb0777tx.jpg",
-    brand: "HP",
-    type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4060",
-    processor: "Intel Core i9-185H",
-    ram: "6GB/32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 35499000
-  },
-  {
-    gambar: "hp_omen_transcend_14_oled_ultra_9_185h_rtx4070_8gb_32gb_2tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_wht_fb0050tx.jpg",
-    brand: "HP",
-    type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4070",
-    processor: "Intel Core i9-185H",
-    ram: "8GB/32GB",
-    rom: "2TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "White",
-    harga: 39799000
-  },
-  {
-    gambar: "hp_omen_transcend_14_oled_ultra_9_185h_rtx4070_8gb_32gb_2tb_w11_14_0_2_8k_vrr_120hz_4zrgb_2y_adp_blk_fb0052tx.jpg",
-    brand: "HP",
-    type: "OMEN TRANSCEND 14 OLED ULTRA 9 185H RTX4070",
-    processor: "Intel Core i9-185H",
-    ram: "8GB/32GB",
-    rom: "2TB",
-    layar: "14.0 2.8K VRR 120Hz 4ZRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 39799000
-  },
-  {
-    gambar: "hp_omen_16_ryzen_7_7840hs_rtx4070_8gb_32gb_1tb_w11_16_1qhd_240hz_blit_2y_adp_blk_xf0011ax.jpg",
-    brand: "HP",
-    type: "OMEN 16 RYZEN 7 7840HS RTX4070",
-    processor: "AMD Ryzen 7 7840HS",
-    ram: "8GB/32GB",
-    rom: "1TB",
-    layar: "16.1 QHD 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 26199000
-  },
-  // ASUS
-  {
-    gambar: "asus_flip_c214ma_chromebook_2in1_touch_n4020_4gb_32gb_11_6_gry.jpg",
-    brand: "ASUS",
-    type: "FLIP C214MA CHROMEBOOK 2IN1 TOUCH N4020",
-    processor: "Intel Celeron N4020",
-    ram: "4GB",
-    rom: "32GB",
-    layar: "11.6 HD",
-    sistem_operasi: "Chrome OS",
-    warna: "Gray",
-    harga: 4499000
-  },
-  {
-    gambar: "asus_expertbook_b1402cba_i3_1215_8gb_512gb_w11_14_0fhd_blit_fp_3y_blk_nk3749w_backpack.jpg",
-    brand: "ASUS",
-    type: "EXPERTBOOK B1402CBA I3 1215",
-    processor: "Intel Core i3-1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 7799000
-  },
-  {
-    gambar: "asus_expertbook_b1402cba_i5_1235_8gb_512gb_w11_14_0fhd_blk_nk5853ws_backpack.jpg",
-    brand: "ASUS",
-    type: "EXPERTBOOK B1402CBA I5 1235",
-    processor: "Intel Core i5-1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 10899000
-  },
-  {
-    gambar: "asus_expertbook_b1400cba_i7_1255_16gb_512gb_w11pro_14_0fhd_blk_ek7850x.jpg",
-    brand: "ASUS",
-    type: "EXPERTBOOK B1400CBA I7 1255",
-    processor: "Intel Core i7-1255",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11 PRO",
-    warna: "Black",
-    harga: 13099000
-  },
-  {
-    gambar: "asus_expertbook_b5_flip_b5302fe_a_oled_touch_i7_1165g7_8gb_512gb_w11pro_13_3fhd_pen_2in1_blk_lf7850x.jpg",
-    brand: "ASUS",
-    type: "EXPERTBOOK B5 FLIP B5302FEA OLED TOUCH I7 1165G7",
-    processor: "Intel Core i7-1165G7",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "13.3 FHD OLED",
-    sistem_operasi: "W11 PRO",
-    warna: "Black",
-    harga: 16399000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404fa_ryzen_3_7320_8gb_256gb_w11_14_0fhd_blk_fhd321.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7249000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404fa_ryzen_3_7320_8gb_512gb_w11_14_0fhd_blk_fhd321_512.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7869000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404fa_ryzen_3_7320_8gb_512gb_w11_14_0fhd_slv_fhd352.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404FA RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 7869000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404fa_ryzen_5_7520_8gb_512gb_w11_14_0fhd_blk_fhd554.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404FA RYZEN 5 7520",
-    processor: "AMD Ryzen 5 7520",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 8999000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404fa_ryzen_5_7520_16gb_512gb_w11_14_0fhd_ips_blk_vips552.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404FA RYZEN 5 7520",
-    processor: "AMD Ryzen 5 7520",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 9919000
-  },
-  {
-    gambar: "asus_vivobook_14_m1405ya_ryzen_5_7430_16gb_512gb_w11_14_0wuxga_blk_vips554.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 M1405YA RYZEN 5 7430",
-    processor: "AMD Ryzen 5 7430",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 10459000
-  },
-  {
-    gambar: "asus_vivobook_s_14_oled_m5406na_ryzen_5_7535hs_16gb_512gb_w11_14_0_2k_blk_oled552.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK S 14 OLED M5406NA RYZEN 5 7535HS",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2K OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 14399000
-  },
-  {
-    gambar: "asus_vivobook_14_oled_m1405ya_ryzen_7_7730_16gb_1tb_w11_14_0_2_8k_blk_oleds711.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 OLED M1405YA RYZEN 7 7730",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 13299000
-  },
-  {
-    gambar: "asus_vivobook_14_oled_m1405ya_ryzen_7_7730_16gb_1tb_w11_14_0_2_8k_slv_oleds713.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 OLED M1405YA RYZEN 7 7730",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 13299000
-  },
-  {
-    gambar: "asus_vivobook_14_oled_m5406ua_ryzen_7_8845hs_16gb_512gb_w11_14_0wuxga_blk_oled752.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 OLED M5406UA RYZEN 7 8845HS",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 15969000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e410ka_n4500_4gb_256gb_w11_14_0fhd_blit_blk_fhd425.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E410KA N4500",
-    processor: "Intel N4500",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6149000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_4gb_256gb_w11_14_0fhd_blit_blk_fhd421.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "4GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6179000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_8gb_256gb_w11_14_0fhd_blk_fhd423.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6329000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_8gb_256gb_w11_14_0fhd_blit_blue_fhd426.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 6359000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_8gb_256gb_w11_14_0fhd_blit_pink_fhd428.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Pink",
-    harga: 6359000
-  },
-  {
-    gambar: "asus_vivobook_15_x515ea_n4500_8gb_256gb_w11_15_6fhd_blit_blk_fhd452.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 15 X515EA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6999000
-  },
-  {
-    gambar: "asus_vivobook_15_x515ea_n4500_8gb_512gb_w11_15_6fhd_blk_fhd454.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 15 X515EA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7399000
-  },
-  {
-    gambar: "asus_vivobook_15_x515ea_n4500_16gb_512gb_w11_15_6fhd_blk_fhd457.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 15 X515EA N4500",
-    processor: "Intel N4500",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7799000
-  },
-  {
-    gambar: "asus_vivobook_15_x515ea_n4500_16gb_1tb_w11_15_6fhd_blk_fhd460.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 15 X515EA N4500",
-    processor: "Intel N4500",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 8499000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_8gb_512gb_w11_14_0fhd_blk_fhd4512.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6689000
-  },
-  {
-    gambar: "asus_vivobook_14_a1400ka_n4500_8gb_512gb_w11_14_0fhd_slv_fhd4511.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1400KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6689000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e410ka_n4500_8gb_512gb_w11_14_0fhd_blu_fhd455.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E410KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 6779000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e410ka_n4500_8gb_512gb_w11_14_0fhd_rose_pnk_fhd456.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E410KA N4500",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Rose Pink",
-    harga: 6779000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404ga_i3_n305_8core_8gb_256gb_w11_14_0fhd_blk_fhd321.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404GA I3 N305",
-    processor: "Intel I3 N305",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7499000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404ga_i3_n305_8core_8gb_256gb_w11_14_0fhd_green_gry_fhd322.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404GA I3 N305",
-    processor: "Intel I3 N305",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Green Grey",
-    harga: 7499000
-  },
-  {
-    gambar: "asus_vivobook_go_14_e1404ga_i3_n305_8core_8gb_512gb_w11_14_0fhd_blk_fhd354.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK GO 14 E1404GA I3 N305",
-    processor: "Intel I3 N305",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7749000
-  },
-  {
-    gambar: "asus_vivobook_14_a1404za_i3_1215_8gb_256gb_w11_14_0fhd_ips_blu_ips321.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1404ZA I3 1215",
-    processor: "Intel I3 1215",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD IPS 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 7779000
-  },
-  {
-    gambar: "asus_vivobook_14_a1404za_i3_1215_8gb_512gb_w11_14_0fhd_vips_blu_vips354.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1404ZA I3 1215",
-    processor: "Intel I3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD VIPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 8429000
-  },
-  {
-    gambar: "asus_vivobook_14_a1404va_i5_1335_8gb_512gb_w11_14_0fhd_vips_blu_vips551.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1404VA I5 1335",
-    processor: "Intel I5 1335",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD VIPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 11259000
-  },
-  {
-    gambar: "asus_vivobook_14_a1405va_i7_1355_16gb_512gb_w11_14_0wuxga_vips_slv_vips752_16.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 14 A1405VA I7 1355",
-    processor: "Intel I7 1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA VIPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 14599000
-  },
-  {
-    gambar: "url_gambar_vivobook_14_a1400ka_n4500_8gb_512gb_blk.jpg",
-    brand: "ASUS",
-    type: "VivoBook 14 A1400KA N4500 8GB 512GB",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 6689000
-  },
-  {
-    gambar: "url_gambar_vivobook_14_a1400ka_n4500_8gb_512gb_slv.jpg",
-    brand: "ASUS",
-    type: "VivoBook 14 A1400KA N4500 8GB 512GB",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 6689000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_14_e410ka_n4500_8gb_512gb_blu.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 14 E410KA N4500 8GB 512GB",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 6779000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_14_e410ka_n4500_8gb_512gb_rose.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 14 E410KA N4500 8GB 512GB",
-    processor: "Intel N4500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Rose Pink",
-    harga: 6779000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_14_e1404ga_i3_n305_8gb_256gb_blk.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 14 E1404GA I3 N305 8GB 256GB",
-    processor: "Intel I3 N305",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7499000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_14_e1404ga_i3_n305_8gb_512gb_blk.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 14 E1404GA I3 N305 8GB 512GB",
-    processor: "Intel I3 N305",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 7749000
-  },
-  {
-    gambar: "url_gambar_vivobook_14_a1404za_i3_1215_8gb_512gb_blu.jpg",
-    brand: "ASUS",
-    type: "VivoBook 14 A1404ZA I3 1215 8GB 512GB",
-    processor: "Intel I3 1215",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 8429000
-  },
-  {
-    gambar: "url_gambar_vivobook_14_a1404za_i5_1235_8gb_512gb_blu.jpg",
-    brand: "ASUS",
-    type: "VivoBook 14 A1404ZA I5 1235 8GB 512GB",
-    processor: "Intel I5 1235",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 10349000
-  },
-  {
-    gambar: "url_gambar_vivobook_s_15_oled_s5507qa_snapdragon_x_78100_32gb_1tb_slv.jpg",
-    brand: "ASUS",
-    type: "VivoBook S 15 OLED S5507QA Snapdragon X Elite X1E",
-    processor: "Snapdragon X Elite X1E",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "15.6 3K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 25499000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_15_oled_e1504fa_ryzen_3_7320_8gb_256gb_gry.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 15 OLED E1504FA Ryzen 3 7320 8GB 256GB",
-    processor: "Ryzen 3 7320",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 8399000
-  },
-  {
-    gambar: "url_gambar_vivobook_go_15_oled_e1504fa_ryzen_5_7520_16gb_512gb_cool.jpg",
-    brand: "ASUS",
-    type: "VivoBook GO 15 OLED E1504FA Ryzen 5 7520 16GB 512GB",
-    processor: "Ryzen 5 7520",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Cool Silver",
-    harga: 10849000
-  },
-  {
-    gambar: "url_gambar_vivobook_pro_15_oled_m6500qc_ryzen_5_5600h_rtx3050_4gb_16gb_512gb_blu.jpg",
-    brand: "ASUS",
-    type: "VivoBook Pro 15 OLED M6500QC Ryzen 5 5600H RTX3050 4GB/16GB 512GB",
-    processor: "Ryzen 5 5600H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 13799000
-  },
-  {
-    gambar: "url_gambar_asus_vivobook_15_oled_k513ea_i7_1165g7.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK 15 OLED K513EA",
-    processor: "Intel Core i7 1165G7",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD OLED 100% DCI-P3",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 12399000
-  },
-  {
-    gambar: "url_gambar_asus_vivobook_pro_16_oled_k6602vu_i9_13900h.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK PRO 16 OLED K6602VU",
-    processor: "Intel Core i9 13900H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 3.2K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 25199000
-  },
-  {
-    gambar: "url_gambar_asus_vivobook_pro_16x_oled_k6604jv_i9_13980hx.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK PRO 16X OLED K6604JV",
-    processor: "Intel Core i9 13980HX",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "16.0 3.2K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 29299000
-  },
-  {
-    gambar: "url_gambar_asus_vivobook_pro_16x_oled_k6604jv_i9_13980hx_32gb.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK PRO 16X OLED K6604JV",
-    processor: "Intel Core i9 13980HX",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "16.0 3.2K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 30729000
-  },
-  {
-    gambar: "url_gambar_asus_vivobook_pro_15_oled_n6506mu_ultra_7.jpg",
-    brand: "ASUS",
-    type: "VIVOBOOK PRO 15 OLED N6506MU ULTRA 7",
-    processor: "Intel Core i7 155H",
-    ram: "24GB",
-    rom: "1TB",
-    layar: "15.6 3K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 27399000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_um425uaz_ips554_ryzen_5_5500.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 UM425UAZ",
-    processor: "AMD Ryzen 5 5500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Purple",
-    harga: 11380000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_oled_um3406ha_ryzen_7_8840hs.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 OLED UM3406HA",
-    processor: "AMD Ryzen 7 8840HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA OLED",
-    sistem_operasi: "W11",
-    warna: "Black",
-    harga: 15999000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_oled_ux3402za_touch_i5_1240p.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 OLED UX3402ZA TOUCH",
-    processor: "Intel Core i5 1240P",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 2.8K OLED 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Aqua",
-    harga: 15399000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_oled_ux3405ma_ultra_5_125h.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 OLED UX3405MA ULTRA 5",
-    processor: "Intel Core i5 125H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 3K OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 18499000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_oled_ux3405ma_ultra_7_155h.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 OLED UX3405MA ULTRA 7",
-    processor: "Intel Core i7 155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 3K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 21499000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_14_oled_touch_ux3405ma_ultra_7_155h.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK 14 OLED TOUCH UX3405MA ULTRA 7",
-    processor: "Intel Core i7 155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 3K OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Silver",
-    harga: 23799000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_s13_oled_ux5304ma_ultra_7_155u.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK S13 OLED UX5304MA ULTRA 7",
-    processor: "Intel Core i7 155U",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "13.3 3K OLED",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 26349000
-  },
-  {
-    gambar: "url_gambar_asus_zenbook_duo_ux8406ma_oled_touch_ultra_7.jpg",
-    brand: "ASUS",
-    type: "ZENBOOK DUO UX8406MA OLED TOUCH ULTRA 7",
-    processor: "Intel Core i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 3K+FHD OLED 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 34249000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a14_fa401uu_ryzen_7_8845hs.jpg",
-    brand: "ASUS",
-    type: "TUF A14 FA401UU",
-    processor: "AMD Ryzen 7 8845HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 QHD 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 23299000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a15_fa506nf_ryzen_5_7535hs_rtx2050.jpg",
-    brand: "ASUS",
-    type: "TUF A15 FA506NF",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 11449000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a15_fa506nc_ryzen_5_7535hs_rtx3050.jpg",
-    brand: "ASUS",
-    type: "TUF A15 FA506NC",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz IPS",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12649000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a15_fa507nu_ryzen_5_7535hs_rtx4050.jpg",
-    brand: "ASUS",
-    type: "TUF A15 FA507NU",
-    processor: "AMD Ryzen 5 7535HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 16349000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a16_fa617nsr_ryzen_7_7435hs_rx7600s.jpg",
-    brand: "ASUS",
-    type: "TUF A16 FA617NSR",
-    processor: "AMD Ryzen 7 7435HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "16.0 FHD 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 18699000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a15_fa507uv_ryzen_9_8945h.jpg",
-    brand: "ASUS",
-    type: "TUF A15 FA507UV",
-    processor: "AMD Ryzen 9 8945H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 24499000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_a15_fa507ui_ryzen_9_8945h.jpg",
-    brand: "ASUS",
-    type: "TUF A15 FA507UI",
-    processor: "AMD Ryzen 9 8945H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 26599000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_f15_fx506lh_i5_10300h_gtx1650.jpg",
-    brand: "ASUS",
-    type: "TUF F15 FX506LH",
-    processor: "Intel Core i5 10300H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W10+OHS",
-    warna: "Gray",
-    harga: 12099000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_f15_fx507zc4_i5_12500h_rtx3050.jpg",
-    brand: "ASUS",
-    type: "TUF F15 FX507ZC4",
-    processor: "Intel Core i5 12500H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13749000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_f15_fx507zc4_i5_12500h_rtx3050_16gb.jpg",
-    brand: "ASUS",
-    type: "TUF F15 FX507ZC4",
-    processor: "Intel Core i5 12500H",
-    ram: "4GB/16GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 14199000
-  },
-  {
-    gambar: "url_gambar_asus_tuf_f15_fx506hf_i7_11800h_rtx2050.jpg",
-    brand: "ASUS",
-    type: "TUF F15 FX506HF",
-    processor: "Intel Core i7 11800H",
-    ram: "4GB/8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 12099000
-  },
-  {
-    gambar: "url_gambar_asus_rog_strix_g16_g614ju_i7_13650hx_rtx4050.jpg",
-    brand: "ASUS",
-    type: "ROG STRIX G16 G614JU",
-    processor: "Intel Core i7 13650HX",
-    ram: "6GB/16GB",
-    rom: "512GB",
-    layar: "16.0 FHD 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 24249000
-  },
-  {
-    gambar: "url_gambar_asus_rog_zephyrus_g14_ga402nj_ryzen7_7735hs_rtx3050.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS G14 GA402NJ",
-    processor: "AMD Ryzen 7 7735HS",
-    ram: "6GB/16GB",
-    rom: "512GB",
-    layar: "14.0 QHD 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 21999000
-  },
-  {
-    gambar: "url_gambar_asus_rog_flow_x13_gv302xu_ryzen9_7940hs_rtx4050.jpg",
-    brand: "ASUS",
-    type: "ROG FLOW X13 GV302XU",
-    processor: "AMD Ryzen 9 7940HS",
-    ram: "6GB/16GB",
-    rom: "1TB",
-    layar: "13.4 QHD 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 29899000
-  },
-  {
-    gambar: "url_asus_rog_zephyrus_g16_gu603vv_i9_13900h_rtx4060.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS G16 GU603VV I9 13900H",
-    processor: "Intel Core i9 13900H",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ NEBULA 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 32399000
-  },
-  {
-    gambar: "url_asus_rog_zephyrus_g16_oled_gu605mu_ultra_7_155h_rtx4050.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS G16 OLED GU605MU ULTRA 7 155H",
-    processor: "AMD Ryzen 7 155H",
-    ram: "6GB/16GB",
-    rom: "1TB",
-    layar: "16.0 NEBULA 2.5K 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 33999000
-  },
-  {
-    gambar: "url_asus_rog_zephyrus_g16_oled_gu605mi_ultra_9_185h_rtx4070.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS G16 OLED GU605MI ULTRA 9 185H",
-    processor: "AMD Ryzen 9 185H",
-    ram: "8GB/32GB",
-    rom: "1TB",
-    layar: "16.0 NEBULA 2.5K 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 44999000
-  },
-  {
-    gambar: "url_asus_rog_zephyrus_m16_gu604vi_i9_13900h_rtx4070.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS M16 GU604VI I9 13900H",
-    processor: "Intel Core i9 13900H",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ NEBULA 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 39499000
-  },
-  {
-    gambar: "url_asus_rog_zephyrus_duo_16_gx650pi_ryzen_9_7945hx_rtx4070.jpg",
-    brand: "ASUS",
-    type: "ROG ZEPHYRUS DUO 16 GX650PI RYZEN 9 7945HX",
-    processor: "AMD Ryzen 9 7945HX",
-    ram: "8GB/32GB",
-    rom: "1TB",
-    layar: "16.0 QHD+ NEBULA MINILED 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 57999000
-  },
-  {
-    gambar: "url_lenovo_ideapad_slim_1_14_ryzen_3_7320_8gb_256gb.jpg",
-    brand: "Lenovo",
-    type: "IDEAPAD SLIM 1 14 RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gold",
-    harga: 7049000
-  },
-  {
-    gambar: "url_lenovo_ideapad_slim_1_14_ryzen_3_7320_8gb_512gb.jpg",
-    brand: "Lenovo",
-    type: "IDEAPAD SLIM 1 14 RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 7440000
-  },
-  {
-    gambar: "url_lenovo_ideapad_slim_1_14_n4020_8gb_256gb.jpg",
-    brand: "Lenovo",
-    type: "IDEAPAD SLIM 1 14 N4020",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 5749000
-  },
-  {
-    gambar: "url_lenovo_ideapad_slim_1_14_n4020_8gb_512gb.jpg",
-    brand: "Lenovo",
-    type: "IDEAPAD SLIM 1 14 N4020",
-    processor: "Intel N4020",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 6099000
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "G16 GU603VV",
-    processor: "I9 13900H",
-    gpu: "RTX4060",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0QHD+ NEBULA 240HZ",
-    color: "GRY",
-    warranty: "2M",
-    price: "32.299"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "G16 OLED GU605MU",
-    processor: "ULTRA 7 155H",
-    gpu: "RTX4050",
-    ram: "6GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0+ NEBULA 2.5K 240HZ",
-    color: "GRY",
-    warranty: "2M",
-    price: "33.999"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "G16 OLED GU605MI",
-    processor: "ULTRA 9 185H",
-    gpu: "RTX4070",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0 NEBULA 2.5K 240HZ",
-    color: "GRY",
-    warranty: "2M",
-    price: "44.999"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "G16 OLED GU605MV",
-    processor: "ULTRA 9 185H",
-    gpu: "RTX4060",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0+ NEBULA 2.5K 240HZ",
-    color: "GRY",
-    warranty: "2M",
-    price: "37.299"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "G16 OLED GU605MV",
-    processor: "ULTRA 9 185H",
-    gpu: "RTX4060",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0+ NEBULA 2.5K 240HZ",
-    color: "WHITE",
-    warranty: "2M",
-    price: "40.299"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "M16 GU604VI",
-    processor: "I9 13900H",
-    gpu: "RTX4070",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0 NEBULA QHD+ 240HZ",
-    color: "BLK",
-    warranty: "2M",
-    price: "39.499"
-  },
-  {
-    brand: "ASUS",
-    series: "ROG ZEPHYRUS",
-    model: "DUO 16 GX650PI",
-    processor: "RYZEN 9 7945HX",
-    gpu: "RTX4070",
-    ram: "8GB",
-    storage: "1TB",
-    os: "W11+OHS",
-    display: "16.0QHD+ NEBULA MINILED 240HZ",
-    color: "BLK",
-    warranty: "2M",
-    price: "57.999"
-  },
+    // LENOVO IDEAPAD SLIM
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 1 14",
+      processor: "RYZEN 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0FHD",
+      harga: "7.049"
+    },
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 1 14",
+      processor: "RYZEN 3 7320",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD",
+      harga: "7.440"
+    },
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 3 14",
+      processor: "RYZEN 5 7530",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: "9.549"
+    },
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 3 14",
+      processor: "RYZEN 7 7730",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: "10.799"
+    },
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 3 14",
+      processor: "I5 12450H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0FHD IPS",
+      harga: "9.799"
+    },
+    {
+      brand: "LENOVO",
+      type: "IDEAPAD SLIM 3 14",
+      processor: "I7 13620H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD IPS",
+      harga: "12.649"
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 Light 14",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD 100% sRGB",
+      harga: 12449000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 12699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "AMD Ryzen 7 7730",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 12699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Pro 5 14 OLED",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 20799000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "Intel i5 13420H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 12699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "Intel i5 13420H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 12699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "Intel i7 13620H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 14699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED",
+      processor: "Intel i7 13620H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 14699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED Ultra 5 125H",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 13849000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED Ultra 5 125H",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 13849000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED Ultra 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 15349000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Slim 5 14 OLED Ultra 7 155H",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 15349000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Pro 5 14 OLED Ultra 7 155H",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 2.8K 120Hz",
+      harga: 19699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Duet 3 11 Touch",
+      processor: "Intel N200",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "11.5 2K",
+      harga: 10299000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Duet 5 12 Touch",
+      processor: "Intel i5 1335",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "12.4 2.5K PEN",
+      harga: 16949000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Duet 5 12 Touch",
+      processor: "Intel i7 1355",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "12.4 2.5K PEN",
+      harga: 18749000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Flex 5 14 Touch",
+      processor: "AMD Ryzen 5 5500",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 11499000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad Flex 5 14 Touch",
+      processor: "AMD Ryzen 7 5700",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 13299000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad 5 2-in-1 14",
+      processor: "Intel i5 13420H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN",
+      harga: 13749000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad 5 2-in-1 14",
+      processor: "Intel Core i5 120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN",
+      harga: 14199000
+    },
+    {
+      brand: "Lenovo",
+      type: "Ideapad 5 2-in-1 14 OLED",
+      processor: "Intel Core i5 120U",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN",
+      harga: 14649000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Slim 6 14 OLED",
+      processor: "Intel i7 13700H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 15749000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Slim 7X 14 Touch OLED",
+      processor: "Snapdragon X Elite",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 3K 90Hz",
+      harga: 25699000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Pro 7 14 Touch",
+      processor: "AMD Ryzen 7 8845HS",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.5 2.5K 90Hz 100% sRGB",
+      harga: 20269000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Pro 7 14",
+      processor: "Intel i5 13500H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.5 WQXGA 90Hz",
+      harga: 15899000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Pro 7 14 OLED Ultra",
+      processor: "Intel i7 155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 2.8K 120Hz",
+      harga: 25769000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Pro 7 14 Touch Ultra",
+      processor: "Intel i9 185H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.5 3K 120Hz 100% DCI-P3",
+      harga: 30099000
+    },
+    // Lenovo Yoga Slim 7 14
+    {
+      brand: "Lenovo",
+      type: "Yoga Slim 7 14 Touch OLED Ultra",
+      processor: "Intel i5 125H",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA",
+      harga: 16399000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Slim 7 14 Touch OLED Ultra",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA",
+      harga: 19299000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga Slim 7 14 Touch OLED Ultra",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA",
+      harga: 23700000
+    },
+    // Lenovo Yoga 7 2-in-1 14
+    {
+      brand: "Lenovo",
+      type: "Yoga 7 2-in-1 14 OLED",
+      processor: "AMD Ryzen 5 8640HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 WUXGA PEN",
+      harga: 16299000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga 7 2-in-1 14 OLED",
+      processor: "AMD Ryzen 7 8840HS",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 WUXGA PEN",
+      harga: 18699000
+    },
+    // Lenovo Yoga Book 9
+    {
+      brand: "Lenovo",
+      type: "Yoga Book 9 OLED Touch Ultra",
+      processor: "Intel i7 155U",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "2x13.3 2.8K",
+      harga: 34999000
+    },
+    // Lenovo Yoga 9 2-in-1 14
+    {
+      brand: "Lenovo",
+      type: "Yoga 9 2-in-1 14 OLED Ultra",
+      processor: "Intel i7 155H",
+      ram: "16GB",
+      rom: "1TB",
+      layar: "14.0 4K PEN",
+      harga: 27499000
+    },
+    {
+      brand: "Lenovo",
+      type: "Yoga 9 2-in-1 14 OLED Ultra",
+      processor: "Intel i7 155H",
+      ram: "32GB",
+      rom: "1TB",
+      layar: "14.0 4K PEN",
+      harga: 28499000
+    },
+    // Lenovo Ideapad Gaming 3 15
+    {
+      brand: "Lenovo",
+      type: "Ideapad Gaming 3 15",
+      processor: "AMD Ryzen 5 5500H",
+      ram: "8GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 11499000
+    },
+    // Lenovo LOQ 15
+    {
+      brand: "Lenovo",
+      type: "LOQ 15",
+      processor: "AMD Ryzen 7 7435HS",
+      ram: "12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 18099000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15",
+      processor: "Intel i5 12450HX",
+      ram: "12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 12249000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15",
+      processor: "Intel i5 13450HX",
+      ram: "12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 15349000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15",
+      processor: "Intel i5 13450HX",
+      ram: "12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz",
+      harga: 17049000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15 I5 13450HX RTX4050",
+      processor: "Intel Core i5 13450HX",
+      ram: "6GB/20GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz 100% sRGB",
+      harga: 17549000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15 I7 13650HX RTX3050",
+      processor: "Intel Core i7 13650HX",
+      ram: "6GB/12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz 100% sRGB",
+      harga: 17149000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15 I7 13650HX RTX4050",
+      processor: "Intel Core i7 13650HX",
+      ram: "6GB/12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz 100% sRGB",
+      harga: 18749000
+    },
+    {
+      brand: "Lenovo",
+      type: "LOQ 15 I7 13650HX RTX4060",
+      processor: "Intel Core i7 13650HX",
+      ram: "8GB/12GB",
+      rom: "512GB",
+      layar: "15.6 FHD 144Hz 100% sRGB",
+      harga: 21199000
+    },
+    {
+      brand: "Lenovo",
+      type: "LEGION SLIM 5 16 RYZEN 7 7840HS RTX4050",
+      processor: "AMD Ryzen 7 7840HS",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "16.0 WQXGA 165Hz",
+      harga: 21499000
+    },
+    {
+      brand: "Lenovo",
+      type: "LEGION PRO 5 16 I7 14650HX RTX4060",
+      processor: "Intel Core i7 14650HX",
+      ram: "8GB/16GB",
+      rom: "1TB",
+      layar: "16.0 WQXGA 240Hz",
+      harga: 26499000
+    },
+    {
+      brand: "Lenovo",
+      type: "LEGION PRO 7 16 I9 14900HX RTX4090",
+      processor: "Intel Core i9 14900HX",
+      ram: "16GB/32GB",
+      rom: "2TB",
+      layar: "16.0 WQXGA 240Hz",
+      harga: 61399000
+    },
+    {
+      brand: "Lenovo",
+      type: "V14 G4 RYZEN 3 7320",
+      processor: "AMD Ryzen 3 7320",
+      ram: "8GB",
+      rom: "256GB",
+      layar: "14.0 FHD",
+      harga: 7299000
+    },
+    {
+      brand: "Lenovo",
+      type: "V14 G4 RYZEN 5 5500",
+      processor: "AMD Ryzen 5 5500",
+      ram: "16GB",
+      rom: "512GB",
+      layar: "14.0 FHD",
+      harga: 8899000
+    }
+  ];
 
-  // LENOVO IDEAPAD SLIM
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 1 14",
-    processor: "RYZEN 3 7320",
-    ram: "8GB",
-    storage: "256GB",
-    os: "W11+OHS",
-    display: "14.0FHD",
-    warranty: "2Y PREM",
-    color: "GLD",
-    price: "7.049"
-  },
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 1 14",
-    processor: "RYZEN 3 7320",
-    ram: "8GB",
-    storage: "512GB",
-    os: "W11+OHS",
-    display: "14.0FHD",
-    warranty: "2Y PREM",
-    color: "GRY",
-    price: "7.440"
-  },
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 3 14",
-    processor: "RYZEN 5 7530",
-    ram: "8GB",
-    storage: "512GB",
-    os: "W11+OHS",
-    display: "14.0FHD IPS",
-    warranty: "2Y PREM",
-    color: "BLU -04ID",
-    price: "9.549"
-  },
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 3 14",
-    processor: "RYZEN 7 7730",
-    ram: "8GB",
-    storage: "512GB",
-    os: "W11+OHS",
-    display: "14.0FHD IPS",
-    warranty: "2Y PREM",
-    color: "GRY -08ID",
-    price: "10.799"
-  },
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 3 14",
-    processor: "I5 12450H",
-    ram: "8GB",
-    storage: "512GB",
-    os: "W11+OHS",
-    display: "14.0FHD IPS",
-    warranty: "2Y PREM",
-    color: "ABYSS BLU -06ID",
-    price: "9.799"
-  },
-  {
-    brand: "LENOVO",
-    series: "IDEAPAD SLIM 3 14",
-    processor: "I7 13620H",
-    ram: "16GB",
-    storage: "512GB",
-    os: "W11+OHS",
-    display: "14.0 FHD IPS",
-    warranty: "2Y PREM+2ADP",
-    color: "BLU -2AID",
-    price: "12.649"
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_light_14_ryzen_7_7730.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 Light 14",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12449000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ryzen_7_7730_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12699000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ryzen_7_7730_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "AMD Ryzen 7 7730",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12699000
-  },
-  {
-    gambar: "lenovo_ideapad_pro_5_14_oled_ryzen_7_8845hs.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Pro 5 14 OLED",
-    processor: "AMD Ryzen 7 8845HS",
-    gpu: "RTX 3050 6GB",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 20799000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_i5_13420h_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "Intel i5 13420H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 12699000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_i5_13420h_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "Intel i5 13420H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12699000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_i7_13620h_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "Intel i7 13620H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 14699000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_i7_13620h_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED",
-    processor: "Intel i7 13620H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 14699000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ultra_5_125h_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED Ultra 5 125H",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13849000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ultra_5_125h_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED Ultra 5 125H",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 13849000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ultra_7_155h_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED Ultra 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 15349000
-  },
-  {
-    gambar: "lenovo_ideapad_slim_5_14_oled_ultra_7_155h_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Slim 5 14 OLED Ultra 7 155H",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 15349000
-  },
-  {
-    gambar: "lenovo_ideapad_pro_5_14_oled_ultra_7_155h_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Pro 5 14 OLED Ultra 7 155H",
-    processor: "AMD Ryzen 7 8845HS",
-    gpu: "RTX 3050 6GB",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 19699000
-  },
-  {
-    gambar: "lenovo_ideapad_duet_3_11_touch_intel_n200.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Duet 3 11 Touch",
-    processor: "Intel N200",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "11.5 2K",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 10299000
-  },
-  {
-    gambar: "lenovo_ideapad_duet_5_12_touch_i5_1335_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Duet 5 12 Touch",
-    processor: "Intel i5 1335",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "12.4 2.5K PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 16949000
-  },
-  {
-    gambar: "lenovo_ideapad_duet_5_12_touch_i7_1355_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Duet 5 12 Touch",
-    processor: "Intel i7 1355",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "12.4 2.5K PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 18749000
-  },
-  {
-    gambar: "lenovo_ideapad_flex_5_14_touch_ryzen_5_5500.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Flex 5 14 Touch",
-    processor: "AMD Ryzen 5 5500",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11499000
-  },
-  {
-    gambar: "lenovo_ideapad_flex_5_14_touch_ryzen_7_5700.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Flex 5 14 Touch",
-    processor: "AMD Ryzen 7 5700",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 13299000
-  },
-  {
-    gambar: "lenovo_ideapad_5_2in1_14_i5_13420h_blue.jpg",
-    brand: "Lenovo",
-    type: "Ideapad 5 2-in-1 14",
-    processor: "Intel i5 13420H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 13749000
-  },
-  {
-    gambar: "lenovo_ideapad_5_2in1_14_core_5_120u_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad 5 2-in-1 14",
-    processor: "Intel Core i5 120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 14199000
-  },
-  {
-    gambar: "lenovo_ideapad_5_2in1_14_oled_core_5_120u_gray.jpg",
-    brand: "Lenovo",
-    type: "Ideapad 5 2-in-1 14 OLED",
-    processor: "Intel Core i5 120U",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 14649000
-  },
-  {
-    gambar: "lenovo_yoga_slim_6_14_oled_i7_13700h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Slim 6 14 OLED",
-    processor: "Intel i7 13700H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 15749000
-  },
-  {
-    gambar: "lenovo_yoga_slim_7x_14_touch_oled_snapdragon_x_elite.jpg",
-    brand: "Lenovo",
-    type: "Yoga Slim 7X 14 Touch OLED",
-    processor: "Snapdragon X Elite",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 3K 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 25699000
-  },
-  {
-    gambar: "lenovo_yoga_pro_7_14_touch_ryzen_7_8845hs.jpg",
-    brand: "Lenovo",
-    type: "Yoga Pro 7 14 Touch",
-    processor: "AMD Ryzen 7 8845HS",
-    gpu: "RTX 3050 6GB",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.5 2.5K 90Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 20269000
-  },
-  {
-    gambar: "lenovo_yoga_pro_7_14_i5_13500h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Pro 7 14",
-    processor: "Intel i5 13500H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.5 WQXGA 90Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Teal",
-    harga: 15899000
-  },
-  {
-    gambar: "lenovo_yoga_pro_7_14_oled_ultra_7_155h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Pro 7 14 OLED Ultra",
-    processor: "Intel i7 155H",
-    gpu: "RTX 4050 6GB",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 2.8K 120Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 25769000
-  },
-  {
-    gambar: "lenovo_yoga_pro_7_14_touch_ultra_9_185h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Pro 7 14 Touch Ultra",
-    processor: "Intel i9 185H",
-    gpu: "RTX 4060 8GB",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.5 3K 120Hz 100% DCI-P3",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 30099000
-  },
-  // Lenovo Yoga Slim 7 14
-  {
-    gambar: "lenovo_yoga_slim_7_14_touch_oled_ultra_5_125h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Slim 7 14 Touch OLED Ultra",
-    processor: "Intel i5 125H",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 16399000
-  },
-  {
-    gambar: "lenovo_yoga_slim_7_14_touch_oled_ultra_7_155h.jpg",
-    brand: "Lenovo",
-    type: "Yoga Slim 7 14 Touch OLED Ultra",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 19299000
-  },
-  {
-    gambar: "lenovo_yoga_slim_7_14_touch_oled_ultra_7_155h_pro.jpg",
-    brand: "Lenovo",
-    type: "Yoga Slim 7 14 Touch OLED Ultra",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA",
-    sistem_operasi: "W11Pro+OHS",
-    warna: "Gray",
-    harga: 23700000
-  },
-  // Lenovo Yoga 7 2-in-1 14
-  {
-    gambar: "lenovo_yoga_7_2in1_14_oled_ryzen_5_8640hs.jpg",
-    brand: "Lenovo",
-    type: "Yoga 7 2-in-1 14 OLED",
-    processor: "AMD Ryzen 5 8640HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 WUXGA PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 16299000
-  },
-  {
-    gambar: "lenovo_yoga_7_2in1_14_oled_ryzen_7_8840hs.jpg",
-    brand: "Lenovo",
-    type: "Yoga 7 2-in-1 14 OLED",
-    processor: "AMD Ryzen 7 8840HS",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 WUXGA PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 18699000
-  },
-  // Lenovo Yoga Book 9
-  {
-    gambar: "lenovo_yoga_book_9_oled_touch_ultra_7_155u.jpg",
-    brand: "Lenovo",
-    type: "Yoga Book 9 OLED Touch Ultra",
-    processor: "Intel i7 155U",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "2x13.3 2.8K",
-    sistem_operasi: "W11+OHS",
-    warna: "Tidal Teal",
-    harga: 34999000
-  },
-  // Lenovo Yoga 9 2-in-1 14
-  {
-    gambar: "lenovo_yoga_9_2in1_14_oled_ultra_7_155h.jpg",
-    brand: "Lenovo",
-    type: "Yoga 9 2-in-1 14 OLED Ultra",
-    processor: "Intel i7 155H",
-    ram: "16GB",
-    rom: "1TB",
-    layar: "14.0 4K PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 27499000
-  },
-  {
-    gambar: "lenovo_yoga_9_2in1_14_oled_ultra_7_155h_32gb.jpg",
-    brand: "Lenovo",
-    type: "Yoga 9 2-in-1 14 OLED Ultra",
-    processor: "Intel i7 155H",
-    ram: "32GB",
-    rom: "1TB",
-    layar: "14.0 4K PEN",
-    sistem_operasi: "W11+OHS",
-    warna: "Blue",
-    harga: 28499000
-  },
-  // Lenovo Ideapad Gaming 3 15
-  {
-    gambar: "lenovo_ideapad_gaming_3_15_ryzen_5_5500h.jpg",
-    brand: "Lenovo",
-    type: "Ideapad Gaming 3 15",
-    processor: "AMD Ryzen 5 5500H",
-    gpu: "RTX 2050 4GB",
-    ram: "8GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 11499000
-  },
-  // Lenovo LOQ 15
-  {
-    gambar: "lenovo_loq_15_ryzen_7_7435hs.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15",
-    processor: "AMD Ryzen 7 7435HS",
-    gpu: "RTX 4060 8GB",
-    ram: "12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 18099000
-  },
-  {
-    gambar: "lenovo_loq_15_i5_12450hx.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15",
-    processor: "Intel i5 12450HX",
-    gpu: "RTX 2050 4GB",
-    ram: "12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 12249000
-  },
-  {
-    gambar: "lenovo_loq_15_i5_13450hx.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15",
-    processor: "Intel i5 13450HX",
-    gpu: "RTX 3050 6GB",
-    ram: "12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 15349000
-  },
-  {
-    gambar: "lenovo_loq_15_i5_13450hx_rtx4050.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15",
-    processor: "Intel i5 13450HX",
-    gpu: "RTX 4050 6GB",
-    ram: "12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 17049000
-  },
-  {
-    gambar: "url_gambar_lenovo_loq_15_i5_13450hx_rtx4050.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15 I5 13450HX RTX4050",
-    processor: "Intel Core i5 13450HX",
-    ram: "6GB/20GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 17549000
-  },
-  {
-    gambar: "url_gambar_lenovo_loq_15_i7_13650hx_rtx3050.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15 I7 13650HX RTX3050",
-    processor: "Intel Core i7 13650HX",
-    ram: "6GB/12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 17149000
-  },
-  {
-    gambar: "url_gambar_lenovo_loq_15_i7_13650hx_rtx4050.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15 I7 13650HX RTX4050",
-    processor: "Intel Core i7 13650HX",
-    ram: "6GB/12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 18749000
-  },
-  {
-    gambar: "url_gambar_lenovo_loq_15_i7_13650hx_rtx4060.jpg",
-    brand: "Lenovo",
-    type: "LOQ 15 I7 13650HX RTX4060",
-    processor: "Intel Core i7 13650HX",
-    ram: "8GB/12GB",
-    rom: "512GB",
-    layar: "15.6 FHD 144Hz 100% sRGB",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 21199000
-  },
-  {
-    gambar: "url_gambar_lenovo_legion_slim_5_16_ryzen_7_7840hs_rtx4050.jpg",
-    brand: "Lenovo",
-    type: "LEGION SLIM 5 16 RYZEN 7 7840HS RTX4050",
-    processor: "AMD Ryzen 7 7840HS",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "16.0 WQXGA 165Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 21499000
-  },
-  {
-    gambar: "url_gambar_lenovo_legion_pro_5_16_i7_14650hx_rtx4060.jpg",
-    brand: "Lenovo",
-    type: "LEGION PRO 5 16 I7 14650HX RTX4060",
-    processor: "Intel Core i7 14650HX",
-    ram: "8GB/16GB",
-    rom: "1TB",
-    layar: "16.0 WQXGA 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 26499000
-  },
-  {
-    gambar: "url_gambar_lenovo_legion_pro_7_16_i9_14900hx_rtx4090.jpg",
-    brand: "Lenovo",
-    type: "LEGION PRO 7 16 I9 14900HX RTX4090",
-    processor: "Intel Core i9 14900HX",
-    ram: "16GB/32GB",
-    rom: "2TB",
-    layar: "16.0 WQXGA 240Hz",
-    sistem_operasi: "W11+OHS",
-    warna: "Black",
-    harga: 61399000
-  },
-  {
-    gambar: "url_gambar_lenovo_v14_g4_ryzen_3_7320.jpg",
-    brand: "Lenovo",
-    type: "V14 G4 RYZEN 3 7320",
-    processor: "AMD Ryzen 3 7320",
-    ram: "8GB",
-    rom: "256GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 7299000
-  },
-  {
-    gambar: "url_gambar_lenovo_v14_g4_ryzen_5_5500.jpg",
-    brand: "Lenovo",
-    type: "V14 G4 RYZEN 5 5500",
-    processor: "AMD Ryzen 5 5500",
-    ram: "16GB",
-    rom: "512GB",
-    layar: "14.0 FHD",
-    sistem_operasi: "W11+OHS",
-    warna: "Gray",
-    harga: 8899000
-  }
-];
+
+  // Fungsi untuk mengacak array
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
 
 
 // Fungsi untuk menampilkan data laptop
-function displayLaptops(filteredLaptops = laptops) {
+function displayLaptops(filteredLaptops = laptops) 
+{
   const laptopList = document.getElementById('laptopList');
-  
-  // Membersihkan konten sebelumnya
-  laptopList.innerHTML = '';
-  
-  // Menggunakan forEach untuk mengulangi setiap item laptop
-  filteredLaptops.forEach((laptop) => {
+  laptopList.innerHTML = ''
+
+  // Mengacak data sebelum ditampilkan
+  const shuffledLaptops = shuffleArray(filteredLaptops);
+
+  shuffledLaptops.forEach((laptop) => {
     const laptopItem = document.createElement('div');
     laptopItem.classList.add('border-2', 'bg-gray-100', 'p-10', 'rounded-lg', 'shadow-lg');
     
     laptopItem.innerHTML = `
-      <h3 class="text-lg font-bold text-gray-700 py-4 border-sky-500 border-2 px-2 rounded-xl">${laptop.brand} ${laptop.type}</h3>
+      <h3 class="text-lg font-bold text-gray-700 py-4 border-sky-500 border-2 rounded-xl px-2">${laptop.brand} ${laptop.type}</h3>
       <p class="text-md text-gray-500 pt-2">Processor: ${laptop.processor}</p>
       <p class="text-md text-gray-500">RAM: ${laptop.ram}</p>
       <p class="text-md text-gray-500">ROM: ${laptop.rom}</p>
@@ -5140,44 +3866,39 @@ function displayLaptops(filteredLaptops = laptops) {
     `;
     
     laptopList.appendChild(laptopItem);
-  });
-
-  // Jika tidak ada laptop yang sesuai dengan pencarian
+  })
   if (filteredLaptops.length === 0) {
-    laptopList.innerHTML = '<p class="text-center text-red-500">Tidak ada laptop yang cocok dengan pencarian Anda.</p>';
+    laptopList.innerHTML = '<p class="text-center text-red-500">Tidak ada laptop yang cocok dengan pencarian Anda. Silahkan cari berdasarkan Brand, Type, atau Processor.</p>';
   }
 }
+
+
 // Fungsi untuk mencari laptop berdasarkan input pencarian
-function searchLaptops(query) {
-  // Mengubah input pencarian menjadi huruf kecil untuk membandingkan tanpa case sensitivity
+function searchLaptops(query) 
+{
+  const searchText = query.toLowerCase();
+  
   const filteredLaptops = laptops.filter(laptop => {
-    const searchText = query.toLowerCase();
-    
     return (
       laptop.brand.toLowerCase().includes(searchText) ||
       laptop.type.toLowerCase().includes(searchText) ||
       laptop.processor.toLowerCase().includes(searchText)
     );
-  });
-
-  // Menampilkan laptop yang sesuai dengan hasil pencarian
-  displayLaptops(filteredLaptops);
-
-    // Menyembunyikan atau menampilkan bagian Produk Unggulan
-    const featuredProducts = document.getElementById('featuredProducts');
-    if (query.length > 0) {
-      featuredProducts.classList.add('hidden');
-    } else {
-      featuredProducts.classList.remove('hidden');
-    }
-
+  })
+  displayLaptops(filteredLaptops)
+  const featuredProducts = document.getElementById('featuredProducts');
+  if (query.length > 0) {
+    featuredProducts.classList.add('hidden');
+  } else {
+    featuredProducts.classList.remove('hidden');
+  }
 }
+
 
 // Event listener untuk input pencarian
 document.getElementById('searchInput').addEventListener('input', function() {
   const query = this.value;
-  searchLaptops(query); // Memanggil fungsi pencarian
-});
-
+  searchLaptops(query);
+})
 // Panggil fungsi untuk menampilkan semua laptop saat halaman dimuat
 displayLaptops();
