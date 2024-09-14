@@ -3869,6 +3869,11 @@ function displayLaptops(filteredLaptops = laptops)
   })
   if (filteredLaptops.length === 0) {
     laptopList.innerHTML = '<p class="text-center text-red-500">Tidak ada laptop yang cocok dengan pencarian Anda. Silahkan cari berdasarkan Brand, Type, atau Processor.</p>';
+    const hiddentitle = document.getElementById('titleProdukH2');
+    hiddentitle.classList.add('hidden');
+  }else{
+    const hiddentitle = document.getElementById('titleProdukH2');
+    hiddentitle.classList.remove('hidden');
   }
 }
 
@@ -3895,8 +3900,6 @@ function searchLaptops(query)
     featuredProducts.classList.remove('hidden');
   }
 }
-
-
 
 // Event listener untuk input pencarian
 document.getElementById('searchInput').addEventListener('input', function() {
