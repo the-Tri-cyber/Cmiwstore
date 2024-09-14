@@ -3876,14 +3876,16 @@ function displayLaptops(filteredLaptops = laptops)
 // Fungsi untuk mencari laptop berdasarkan input pencarian
 function searchLaptops(query) 
 {
-  const searchText = query.toLowerCase();
-  
+  const searchText = document.getElementById('searchInput').value.trim().toLowerCase();
+  const searchTerms = searchText.split(' '); // Pecah input menjadi kata-kata terpisah
+
   const filteredLaptops = laptops.filter(laptop => {
-    return (
-      laptop.brand.toLowerCase().includes(searchText) ||
-      laptop.type.toLowerCase().includes(searchText) ||
-      laptop.processor.toLowerCase().includes(searchText)
-    );
+    // Gabungkan semua informasi yang bisa dicari ke dalam satu string
+    const laptopInfo = `${laptop.brand.toLowerCase()} ${laptop.type.toLowerCase()} ${laptop.processor.toLowerCase()}`;
+
+    // Cek apakah setiap kata dalam searchTerms ada di laptopInfo
+    return searchTerms.every(term => laptopInfo.includes(term));
+
   })
   displayLaptops(filteredLaptops)
   const featuredProducts = document.getElementById('featuredProducts');
@@ -3893,6 +3895,7 @@ function searchLaptops(query)
     featuredProducts.classList.remove('hidden');
   }
 }
+
 
 
 // Event listener untuk input pencarian
