@@ -3274,7 +3274,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0QHD+ NEBULA 240HZ",
-      harga: "32.299"
+      harga: 32299000
     },
     {
       brand: "ASUS",
@@ -3283,7 +3283,7 @@ const laptops = [
       ram: "6GB",
       rom: "1TB",
       layar: "16.0+ NEBULA 2.5K 240HZ",
-      harga: "33.999"
+      harga: 33999000
     },
     {
       brand: "ASUS",
@@ -3292,7 +3292,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0 NEBULA 2.5K 240HZ",
-      harga: "44.999"
+      harga: 44999000
     },
     {
       brand: "ASUS",
@@ -3301,7 +3301,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0+ NEBULA 2.5K 240HZ",
-      harga: "37.299"
+      harga: 37299000
     },
     {
       brand: "ASUS",
@@ -3310,7 +3310,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0+ NEBULA 2.5K 240HZ",
-      harga: "40.299"
+      harga: 40299000
     },
     {
       brand: "ASUS",
@@ -3319,7 +3319,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0 NEBULA QHD+ 240HZ",
-      harga: "39.499"
+      harga: 39499000
     },
     {
       brand: "ASUS",
@@ -3328,7 +3328,7 @@ const laptops = [
       ram: "8GB",
       rom: "1TB",
       layar: "16.0QHD+ NEBULA MINILED 240HZ",
-      harga: "57.999"
+      harga: 57999000
     },
   
     // LENOVO IDEAPAD SLIM
@@ -3339,7 +3339,7 @@ const laptops = [
       ram: "8GB",
       rom: "256GB",
       layar: "14.0FHD",
-      harga: "7.049"
+      harga: 7049000
     },
     {
       brand: "LENOVO",
@@ -3348,7 +3348,7 @@ const laptops = [
       ram: "8GB",
       rom: "512GB",
       layar: "14.0FHD",
-      harga: "7.440"
+      harga: 7440000
     },
     {
       brand: "LENOVO",
@@ -3357,7 +3357,7 @@ const laptops = [
       ram: "8GB",
       rom: "512GB",
       layar: "14.0FHD IPS",
-      harga: "9.549"
+      harga: 9549000
     },
     {
       brand: "LENOVO",
@@ -3366,7 +3366,7 @@ const laptops = [
       ram: "8GB",
       rom: "512GB",
       layar: "14.0FHD IPS",
-      harga: "10.799"
+      harga: 10799000
     },
     {
       brand: "LENOVO",
@@ -3375,7 +3375,7 @@ const laptops = [
       ram: "8GB",
       rom: "512GB",
       layar: "14.0FHD IPS",
-      harga: "9.799"
+      harga: 9799000
     },
     {
       brand: "LENOVO",
@@ -3384,7 +3384,7 @@ const laptops = [
       ram: "16GB",
       rom: "512GB",
       layar: "14.0 FHD IPS",
-      harga: "12.649"
+      harga: 12649000
     },
     {
       brand: "Lenovo",
